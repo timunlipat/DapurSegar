@@ -42,9 +42,10 @@ export const featuredProducts = [
 ];
 
 export const deals = [
-    { title: "Promosi Hujung Minggu", description: "50% off untuk Sayur-sayuran Segar", color: "bg-orange-50" },
-    { title: "Jimat Lebih", description: "Jimat RM20 untuk pesanan melebihi RM100", color: "bg-blue-50" },
-    { title: "Pelanggan Baru", description: "Dapat 25% off untuk pesanan pertama", color: "bg-green-50" }
+    { title: "Promosi Hujung Minggu", description: "50% off untuk Sayur-sayuran Segar", color: "bg-orange-50 !important" },
+    { title: "Jimat Lebih", description: "Jimat RM20 untuk pesanan melebihi RM100", color: "bg-blue-50 !important" },
+    { title: "Pelanggan Baru", description: "Dapat 25% off untuk pesanan pertama", color: "bg-green-50 !important" },
+    { title: "Buah-buahan Tempatan", description: "Diskaun 30% untuk semua buah tempatan", color: "bg-red-50" },
 ];
 
 export const popularSearchTerms = ["Sayur Segar", "Buah-buahan", "Ayam", "Roti", "Beras"];

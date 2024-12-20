@@ -30,16 +30,16 @@ const Page = () => {
                     </div>
 
                     {/* Secondary Promotional Banners - Desktop Only */}
-                    <div className="hidden lg:flex lg:col-span-4 lg:flex-col lg:gap-4">
-                        <div className="relative rounded-xl overflow-hidden h-44 bg-blue-600">
-                            <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-transparent" />
+                    <div className="hidden lg:flex lg:col-span-4 lg:flex-col lg:gap-4 lg:h-full">
+                        <div className="relative rounded-xl overflow-hidden flex-1 bg-blue-600">
+                            <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-transparent"/>
                             <div className="relative z-10 h-full flex flex-col justify-center p-6">
                                 <h3 className="text-xl font-bold text-white mb-1">Penghantaran Percuma</h3>
                                 <p className="text-sm text-white mb-2">Untuk pesanan melebihi RM50</p>
                             </div>
                         </div>
-                        <div className="relative rounded-xl overflow-hidden h-44 bg-purple-600">
-                            <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-transparent" />
+                        <div className="relative rounded-xl overflow-hidden flex-1 bg-purple-600">
+                            <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-transparent"/>
                             <div className="relative z-10 h-full flex flex-col justify-center p-6">
                                 <h3 className="text-xl font-bold text-white mb-1">Ahli Baru</h3>
                                 <p className="text-sm text-white mb-2">Nikmati diskaun 15% untuk pembelian pertama</p>
