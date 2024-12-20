@@ -18,7 +18,27 @@ export const featuredProducts = [
     { name: "Kuih Raya Assorted", price: "RM25.90", unit: "500g", discount: "Raya Special", rating: 4.7, reviews: 156 },
     { name: "Teh Boh", price: "RM8.90", unit: "100 bags", rating: 4.5, reviews: 234 },
     { name: "Pisang Berangan", price: "RM6.90", unit: "per sisir", rating: 4.3, reviews: 98 },
-    { name: "Ikan Kembung", price: "RM15.90", unit: "per kg", discount: "15% OFF", rating: 4.4, reviews: 178 }
+    { name: "Ikan Kembung", price: "RM15.90", unit: "per kg", discount: "15% OFF", rating: 4.4, reviews: 178 },
+    { name: "Kopi Tongkat Ali", price: "RM23.90", unit: "500g", rating: 4.6, reviews: 145 },
+    { name: "Sambal Belacan", price: "RM8.90", unit: "200g", rating: 4.7, reviews: 234 },
+    { name: "Kelapa Parut Segar", price: "RM4.50", unit: "200g", rating: 4.3, reviews: 89 },
+    { name: "Rendang Daging", price: "RM35.90", unit: "500g", discount: "Raya Promo", rating: 4.8, reviews: 312 },
+    { name: "Buah Rambai", price: "RM9.90", unit: "per kg", rating: 4.2, reviews: 67 },
+    { name: "Nasi Pulut", price: "RM6.90", unit: "1kg", rating: 4.5, reviews: 156 },
+    { name: "Ikan Bilis Premium", price: "RM18.90", unit: "250g", discount: "10% OFF", rating: 4.6, reviews: 198 },
+    { name: "Rempah Curry Babas", price: "RM5.90", unit: "250g", rating: 4.7, reviews: 245 },
+    { name: "Taugeh Segar", price: "RM2.90", unit: "200g", rating: 4.1, reviews: 78 },
+    { name: "Udang Galah", price: "RM59.90", unit: "per kg", discount: "Fresh Catch", rating: 4.8, reviews: 167 },
+    { name: "Gula Melaka", price: "RM7.90", unit: "500g", rating: 4.6, reviews: 189 },
+    { name: "Laksa Sarawak Paste", price: "RM12.90", unit: "300g", rating: 4.7, reviews: 234 },
+    { name: "Keropok Lekor", price: "RM15.90", unit: "500g", discount: "Buy 1 Free 1", rating: 4.5, reviews: 178 },
+    { name: "Kunyit Hidup", price: "RM2.50", unit: "100g", rating: 4.3, reviews: 89 },
+    { name: "Petai Segar", price: "RM12.90", unit: "per ikat", rating: 4.4, reviews: 145 },
+    { name: "Asam Pedas Paste", price: "RM9.90", unit: "200g", rating: 4.6, reviews: 167 },
+    { name: "Daun Pisang", price: "RM3.90", unit: "per ikat", rating: 4.2, reviews: 56 },
+    { name: "Kerisik", price: "RM8.90", unit: "200g", rating: 4.5, reviews: 123 },
+    { name: "Sotong Segar", price: "RM29.90", unit: "per kg", discount: "Today's Special", rating: 4.7, reviews: 189 },
+    { name: "Cili Padi", price: "RM2.90", unit: "100g", rating: 4.4, reviews: 145 },
 ];
 
 export const deals = [

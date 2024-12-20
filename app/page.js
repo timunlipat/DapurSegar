@@ -1,6 +1,7 @@
 import { ShoppingCart, Home, Package, User, Search } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 import { deals, featuredProducts } from '@/data';
+import Link from 'next/link';
 import Navbar from '@/components/navbar/Navbar';
 import Footer from '@/components/footer/Footer';
 import MobileNav from '@/components/mobile-nav/MobileNav';
@@ -9,6 +10,7 @@ import ProductCard from '@/components/product-card/ProductCard';
 const Page = () => {
     return (
         <div className="min-h-screen bg-gray-50">
+            {/*Navbar*/}
             <Navbar />
 
             {/* Main Content */}
@@ -68,7 +70,12 @@ const Page = () => {
                 <section>
                     <div className="flex justify-between items-center mb-4">
                         <h2 className="text-xl lg:text-2xl font-semibold">Produk Pilihan</h2>
-                        <button className="text-green-800 text-sm font-medium hover:text-green-600">Lihat Semua</button>
+                        <Link
+                            href="/products"
+                            className="text-green-800 text-sm font-medium hover:text-green-600"
+                        >
+                            Lihat Semua
+                        </Link>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
                         {featuredProducts.slice(0, 8).map((product, index) => (
