@@ -47,7 +47,7 @@ const Footer = () => {
                     </div>
 
                     <div className="border-t border-green-800 mt-8 pt-8 text-center lg:flex lg:justify-between lg:items-center">
-                        <p className="text-green-100 text-sm">&copy; 2024 PasarMan.</p>
+                        <p className="text-green-100 text-sm">&copy; 2024 PasarMan</p>
                         <div className="hidden lg:flex space-x-6">
                         <a href="#" className="text-green-100 hover:text-white text-sm">Privacy</a>
                             <a href="#" className="text-green-100 hover:text-white text-sm">Terms</a>

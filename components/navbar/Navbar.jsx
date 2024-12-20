@@ -2,6 +2,7 @@
 
 import { Search, ShoppingCart, Menu, User, Heart, X, ChevronRight, Bell, Package, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
+import Link from 'next/link';
 import { categories, popularSearchTerms } from '@/data';
 
 const Navbar = () => {
@@ -119,7 +120,7 @@ const Navbar = () => {
                                 <button className="lg:hidden" onClick={() => setIsMobileMenuOpen(true)}>
                                     <Menu size={24} />
                                 </button>
-                                <h1 className="text-xl font-bold">PasarMan</h1>
+                                <Link href="/" className="text-xl font-bold">PasarMan</Link>
                             </div>
 
                             {/* Desktop Categories Dropdown */}
