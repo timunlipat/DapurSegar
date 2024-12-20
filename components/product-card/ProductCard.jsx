@@ -12,39 +12,39 @@ const ProductCard = ({
                      }) => {
     return (
         <Card className="h-full hover:shadow-lg transition-all hover:scale-105">
-            <CardContent className="p-3">
-                {/* Image container with fixed ratio */}
-                <div className="relative w-full pt-[100%] bg-gray-100 rounded-lg mb-3">
+            <CardContent className="p-4 md:p-5">
+                {/* Image container with fixed ratio - made larger */}
+                <div className="relative w-full pt-[100%] bg-gray-100 rounded-lg mb-4 md:mb-5">
                     {discount && (
-                        <span className="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-lg">
+                        <span className="absolute top-3 right-3 bg-red-500 text-white text-sm font-medium px-3 py-1.5 rounded-lg">
                             {discount}
                         </span>
                     )}
                 </div>
 
-                {/* Product details */}
-                <div className="space-y-2">
-                    <h3 className="font-medium text-sm text-gray-800 line-clamp-2 min-h-[2.5rem]">
+                {/* Product details - improved spacing and sizes */}
+                <div className="space-y-3 md:space-y-4">
+                    <h3 className="font-semibold text-base md:text-lg text-gray-900 line-clamp-2 min-h-[2.75rem] leading-snug">
                         {name}
                     </h3>
 
-                    <div className="flex items-center space-x-1">
-                        <span className="text-yellow-400">★</span>
-                        <span className="text-sm text-gray-600">{rating}</span>
-                        <span className="text-xs text-gray-400">({reviews})</span>
+                    <div className="flex items-center space-x-2">
+                        <span className="text-yellow-400 text-lg md:text-xl">★</span>
+                        <span className="text-sm md:text-base font-medium text-gray-700">{rating}</span>
+                        <span className="text-sm md:text-base text-gray-500">({reviews})</span>
                     </div>
 
-                    <div className="flex justify-between items-end pt-1">
-                        <div>
-                            <p className="text-green-800 font-bold text-sm">{price}</p>
-                            <p className="text-xs text-gray-500">{unit}</p>
+                    <div className="flex justify-between items-end pt-2">
+                        <div className="space-y-1">
+                            <p className="text-green-800 font-bold text-lg md:text-xl">{price}</p>
+                            <p className="text-sm md:text-base text-gray-600">{unit}</p>
                         </div>
                         <button
-                            className="bg-green-800 text-white p-2 rounded-full hover:bg-green-700 transition-colors"
+                            className="bg-green-800 text-white p-3 rounded-full hover:bg-green-700 transition-colors"
                             onClick={onAddToCart}
                             aria-label="Add to cart"
                         >
-                            <ShoppingCart size={16} />
+                            <ShoppingCart size={20} />
                         </button>
                     </div>
                 </div>

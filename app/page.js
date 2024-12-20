@@ -70,7 +70,7 @@ const Page = () => {
                         <h2 className="text-xl lg:text-2xl font-semibold">Produk Pilihan</h2>
                         <button className="text-green-800 text-sm font-medium hover:text-green-600">Lihat Semua</button>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
                         {featuredProducts.slice(0, 8).map((product, index) => (
                             <div key={index} className={index >= 4 ? 'hidden md:block' : ''}>
                                 <ProductCard
