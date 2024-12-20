@@ -4,6 +4,7 @@ import { deals, featuredProducts } from '@/data';
 import Navbar from '@/components/navbar/Navbar';
 import Footer from '@/components/footer/Footer';
 import MobileNav from '@/components/mobile-nav/MobileNav';
+import ProductCard from '@/components/product-card/ProductCard';
 
 const Page = () => {
     return (
@@ -69,34 +70,17 @@ const Page = () => {
                         <h2 className="text-xl lg:text-2xl font-semibold">Produk Pilihan</h2>
                         <button className="text-green-800 text-sm font-medium hover:text-green-600">Lihat Semua</button>
                     </div>
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                        {featuredProducts.map((product, index) => (
-                            <Card key={index} className="hover:shadow-lg transition-all hover:scale-105">
-                                <CardContent className="p-4">
-                                    <div className="aspect-square bg-gray-100 rounded-lg mb-3 relative">
-                                        {product.discount && (
-                                            <span className="absolute top-0 right-0 bg-red-500 text-white text-xs px-2 py-1 rounded-bl-lg">
-                                                {product.discount}
-                                            </span>
-                                        )}
-                                    </div>
-                                    <h3 className="font-medium text-sm text-gray-800 line-clamp-2 mb-2 h-10">{product.name}</h3>
-                                    <div className="flex items-center space-x-1 mb-2">
-                                        <span className="text-yellow-400">★</span>
-                                        <span className="text-sm text-gray-600">{product.rating}</span>
-                                        <span className="text-xs text-gray-400">({product.reviews})</span>
-                                    </div>
-                                    <div className="flex justify-between items-end">
-                                        <div>
-                                            <p className="text-green-800 font-bold text-sm">{product.price}</p>
-                                            <p className="text-xs text-gray-500">{product.unit}</p>
-                                        </div>
-                                        <button className="bg-green-800 text-white p-2 rounded-full hover:bg-green-700 transition-colors">
-                                            <ShoppingCart size={18} />
-                                        </button>
-                                    </div>
-                                </CardContent>
-                            </Card>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                        {featuredProducts.slice(0, 8).map((product, index) => (
+                            <ProductCard
+                                key={index}
+                                name={product.name}
+                                price={product.price}
+                                unit={product.unit}
+                                rating={product.rating}
+                                reviews={product.reviews}
+                                discount={product.discount}
+                            />
                         ))}
                     </div>
                 </section>
