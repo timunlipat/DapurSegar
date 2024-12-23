@@ -1,7 +1,9 @@
 "use client";
+
 import { ShoppingCart } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 import { useCart } from '@/app/context/CartContext';
+import { useRouter } from 'next/navigation';
 
 const getPlaceholderImage = (name) => {
     const encodedName = encodeURIComponent(name);
@@ -19,9 +21,11 @@ const ProductCard = ({
                          image = placeholderImage
                      }) => {
     const { addToCart } = useCart();
+    const router = useRouter();
     const imageUrl = image || getPlaceholderImage(name);
 
-    const handleAddToCart = () => {
+    const handleAddToCart = (e) => {
+        e.stopPropagation(); // Prevent card click when adding to cart
         addToCart({
             id,
             name,
@@ -31,8 +35,12 @@ const ProductCard = ({
         });
     };
 
+    const handleCardClick = () => {
+        router.push(`/products/${id}`);
+    };
+
     return (
-        <Card className="h-full hover:shadow-lg transition-all hover:scale-105">
+        <Card className="h-full hover:shadow-lg transition-all hover:scale-105 cursor-pointer" onClick={handleCardClick}>
             <CardContent className="p-4 md:p-5">
                 {/* Image container with fixed ratio */}
                 <div className="relative w-full pt-[100%] bg-gray-100 rounded-lg mb-4 md:mb-5">

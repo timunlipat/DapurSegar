@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c46b62bf-9db5-4c42-806c-a2f26c7fc134" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/products/[id]/page.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/context/CartContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/context/CartContext.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/cart/CartModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/cart/CartModal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/HomeContent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/HomeContent.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/product-card/ProductCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/product-card/ProductCard.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +43,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -95,6 +94,7 @@
       <workItem from="1734678657204" duration="9289000" />
       <workItem from="1734707226289" duration="23000" />
       <workItem from="1734915628865" duration="10837000" />
+      <workItem from="1734944874179" duration="694000" />
     </task>
     <servers />
   </component>
