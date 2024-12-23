@@ -1,12 +1,11 @@
 "use client";
-
 import { Minus, Plus, Trash2 } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { getPlaceholderImage } from '@/utils/images';
 
 const CartItem = ({ item, updateQuantity, removeItem, isCompact = false }) => {
-    const placeholderImage = `/api/placeholder/400/400`;
     const isLowStock = item.stock && item.stock <= 5;
     const isOutOfStock = item.stock === 0;
 
@@ -21,7 +20,7 @@ const CartItem = ({ item, updateQuantity, removeItem, isCompact = false }) => {
             <div className="flex items-start space-x-4">
                 <div className={`relative overflow-hidden rounded-xl bg-gray-50 ${isCompact ? 'w-24 h-24' : 'w-24 h-24'}`}>
                     <img
-                        src={item.image || placeholderImage}
+                        src={getPlaceholderImage(item.name)}
                         alt={item.name}
                         className="object-cover w-full h-full transform transition-transform duration-300 group-hover:scale-105"
                     />

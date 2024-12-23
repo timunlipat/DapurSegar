@@ -4,11 +4,7 @@ import { ShoppingCart } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 import { useCart } from '@/app/context/CartContext';
 import { useRouter } from 'next/navigation';
-
-const getPlaceholderImage = (name) => {
-    const encodedName = encodeURIComponent(name);
-    return `https://placehold.co/400x400/e2e8f0/1e293b/png?text=${encodedName}`;
-};
+import { getPlaceholderImage } from '@/utils/images';
 
 const ProductCard = ({
                          id,

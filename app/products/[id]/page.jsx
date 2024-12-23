@@ -8,17 +8,20 @@ import { useCart } from '@/app/context/CartContext';
 import Link from 'next/link';
 import { featuredProducts } from '@/data';
 import CartModal from '@/components/cart/CartModal';
-
-const getPlaceholderImage = (name) => {
-    const encodedName = encodeURIComponent(name || 'Product');
-    return `https://placehold.co/400x400/e2e8f0/1e293b/png?text=${encodedName}`;
-};
+import { getPlaceholderImage } from '@/utils/images';
 
 const ProductDetailsPage = () => {
     const [product, setProduct] = useState(null);
     const [quantity, setQuantity] = useState(1);
     const [isCartModalOpen, setIsCartModalOpen] = useState(false);
-    const { addToCart, cart } = useCart();
+    const {
+        addToCart,
+        cartItems,
+        updateQuantity,
+        removeItem,
+        getCartTotal,
+    } = useCart();
+    const { subtotal, shipping, total } = getCartTotal();
     const params = useParams();
 
     useEffect(() => {
@@ -46,7 +49,7 @@ const ProductDetailsPage = () => {
                 ...product,
                 quantity
             });
-            console.log('Cart after adding:', cart);
+            console.log('Cart after adding:', cartItems);
             setIsCartModalOpen(true);
         }
     };
@@ -205,7 +208,16 @@ const ProductDetailsPage = () => {
                 </div>
             </div>
             {/* CartModal */}
-            <CartModal isOpen={isCartModalOpen} onClose={closeCartModal} />
+            <CartModal
+                isOpen={isCartModalOpen}
+                onClose={closeCartModal}
+                cartItems={cartItems}
+                updateQuantity={updateQuantity}
+                removeItem={removeItem}
+                subtotal={subtotal}
+                shipping={shipping}
+                total={total}
+            />
         </main>
     );
 };

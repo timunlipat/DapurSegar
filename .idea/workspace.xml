@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c46b62bf-9db5-4c42-806c-a2f26c7fc134" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/utils/images.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/products/[id]/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/products/[id]/page.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/cart/CartItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/cart/CartItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/cart/CartSummary.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/cart/CartSummary.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/HomeContent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/HomeContent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/product-card/ProductCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/product-card/ProductCard.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,8 +51,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Websites\pasarman\app" />
       <recent name="D:\Websites\pasarman" />
+      <recent name="D:\Websites\pasarman\app" />
       <recent name="D:\Websites\pasarman\" />
     </key>
   </component>
@@ -97,7 +96,7 @@
       <workItem from="1734678657204" duration="9289000" />
       <workItem from="1734707226289" duration="23000" />
       <workItem from="1734915628865" duration="10837000" />
-      <workItem from="1734944874179" duration="2278000" />
+      <workItem from="1734944874179" duration="5089000" />
     </task>
     <servers />
   </component>
