@@ -1,14 +1,13 @@
 "use client";
 
-import { Search, ShoppingCart, Menu, User, Heart, X, ChevronRight, Bell, Package, ChevronDown } from 'lucide-react';
+import { Search, ShoppingCart, Menu, User, Heart, X, ChevronRight, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 import Link from 'next/link';
-import { categories, popularSearchTerms } from '@/data';
+import { categories } from '@/data';
 import Container from '@/components/Container';
 
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [activeCategory, setActiveCategory] = useState('Semua');
     const [isCartOpen, setIsCartOpen] = useState(false);
     const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
@@ -27,15 +26,6 @@ const Navbar = () => {
                                         <X size={24} className="text-gray-500" />
                                     </button>
                                 </div>
-                                <div className="mt-4 flex items-center space-x-3">
-                                    <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                                        <User size={24} className="text-green-800" />
-                                    </div>
-                                    <div>
-                                        <p className="font-semibold">Selamat datang!</p>
-                                        <button className="text-green-800 text-sm">Log Masuk / Daftar</button>
-                                    </div>
-                                </div>
                             </div>
 
                             <div className="flex-1 overflow-y-auto">
@@ -50,55 +40,6 @@ const Navbar = () => {
                                         ))}
                                     </div>
                                 </nav>
-                            </div>
-
-                            <div className="border-t p-4 space-y-3">
-                                <a href="#" className="flex items-center space-x-3 text-gray-600">
-                                    <Package size={20} />
-                                    <span>Pesanan Saya</span>
-                                </a>
-                                <a href="#" className="flex items-center space-x-3 text-gray-600">
-                                    <Heart size={20} />
-                                    <span>Senarai Wishlist</span>
-                                </a>
-                                <a href="#" className="flex items-center space-x-3 text-gray-600">
-                                    <Bell size={20} />
-                                    <span>Notifikasi</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )}
-
-            {/* Mobile Search Overlay */}
-            {isSearchOpen && (
-                <div className="fixed inset-0 bg-white z-50 flex flex-col lg:hidden">
-                    <div className="p-4 border-b">
-                        <div className="flex items-center space-x-4">
-                            <button onClick={() => setIsSearchOpen(false)}>
-                                <X size={24} className="text-gray-500" />
-                            </button>
-                            <div className="flex-1">
-                                <input
-                                    type="text"
-                                    placeholder="Cari produk..."
-                                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500"
-                                    autoFocus
-                                />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="flex-1 p-4">
-                        <div className="mb-4">
-                            <h3 className="text-sm font-semibold text-gray-500 mb-2">CARIAN POPULAR</h3>
-                            <div className="flex flex-wrap gap-2">
-                                {popularSearchTerms.map(term => (
-                                    <button key={term}
-                                            className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700 hover:bg-gray-200">
-                                        {term}
-                                    </button>
-                                ))}
                             </div>
                         </div>
                     </div>
@@ -167,10 +108,6 @@ const Navbar = () => {
 
                             {/* Right Section - User Actions */}
                             <div className="flex items-center space-x-6">
-                                <button className="lg:hidden" onClick={() => setIsSearchOpen(true)}>
-                                    <Search size={24} />
-                                </button>
-
                                 {/* Desktop Navigation Items */}
                                 <div className="hidden lg:flex items-center space-x-6">
                                     <button className="flex items-center space-x-1 text-green-100 hover:text-white">
