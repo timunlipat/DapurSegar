@@ -18,7 +18,7 @@ export const featuredProducts = [
         id: 2,
         name: "Roti Gardenia",
         price: 3.90,
-        unit: "per bungkus",
+        unit: "per pack",
         discount: "Beli 1 Percuma 1",
         rating: 4.2,
         reviews: 89,
