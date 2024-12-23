@@ -16,13 +16,13 @@ const Navbar = () => {
         <>
             {/* Mobile Menu Overlay */}
             <div
-                className={`fixed inset-0 bg-black transition-opacity duration-300 lg:hidden z-[90] ${
+                className={`fixed inset-0 bg-black transition-opacity duration-300 lg:hidden z-50 ${
                     isMobileMenuOpen ? 'opacity-50' : 'opacity-0 pointer-events-none'
                 }`}
                 onClick={() => setIsMobileMenuOpen(false)}
             />
             <div
-                className={`fixed inset-y-0 left-0 w-full max-w-sm bg-white shadow-lg transform transition-transform duration-300 ease-out lg:hidden z-[90] ${
+                className={`fixed inset-y-0 left-0 w-full max-w-sm bg-white shadow-lg transform transition-transform duration-300 ease-out lg:hidden z-50 ${
                     isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
                 }`}
             >
@@ -59,7 +59,7 @@ const Navbar = () => {
             </div>
 
             {/* Header */}
-            <header className="bg-green-800 text-white sticky top-0 z-50">
+            <header className="bg-green-800 text-white sticky top-0 z-20">
                 {/* Top Promo Banner */}
                 <div className="bg-green-900">
                     <Container>
@@ -171,7 +171,7 @@ const Navbar = () => {
                 </Container>
 
                 {/* Mobile Category Scroll */}
-                <div className="lg:hidden border-t border-green-700">
+                <div className="lg:hidden border-t border-green-700 z-30">
                     <Container className="overflow-x-auto whitespace-nowrap py-2">
                         <div className="inline-flex space-x-4">
                             {["Semua", ...categories].map(category => (

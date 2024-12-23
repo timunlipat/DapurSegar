@@ -14,8 +14,10 @@ const Page = () => {
             {/*Navbar*/}
             <Navbar />
 
-            {/* Main Content */}
+            {/*MobileNav*/}
+            <MobileNav/>
 
+            {/* Main Content */}
             <main className="py-6">
                 <Container>
                 {/* Desktop Layout - Two Column Hero Section */}
@@ -97,9 +99,6 @@ const Page = () => {
                 </section>
             </Container>
             </main>
-
-            {/*MobileNav*/}
-            <MobileNav/>
 
             {/*Footer*/}
             <Footer/>

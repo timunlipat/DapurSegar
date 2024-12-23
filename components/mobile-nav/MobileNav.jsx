@@ -13,7 +13,7 @@ const MobileNav = () => {
         <>
             {/* Mobile Search Overlay */}
             <div
-                className={`fixed inset-0 bg-white z-50 transform transition-transform duration-300 ease-out lg:hidden ${
+                className={`fixed inset-0 bg-white z-30 transform transition-transform duration-300 ease-out lg:hidden ${
                     isSearchOpen ? 'translate-y-0' : 'translate-y-full'
                 }`}
             >
@@ -100,7 +100,7 @@ const MobileNav = () => {
             />
 
             {/* Bottom Navigation Bar */}
-            <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t py-2 px-4 z-[140]">
+            <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t py-2 px-4 z-30">
                 <div className="flex justify-around">
                     <Link href="/" className="flex flex-col items-center text-green-800">
                         <Home size={24} />
