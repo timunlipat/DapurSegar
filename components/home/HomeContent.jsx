@@ -1,8 +1,77 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { deals, featuredProducts } from '@/data';
 import Link from 'next/link';
 import ProductCard from '@/components/product-card/ProductCard';
 import Container from '@/components/Container';
+import { ChevronRight, Clock, Tag, Percent, Gift } from 'lucide-react';
+
+const DealCard = ({ deal, index }) => {
+    const getIcon = (type) => {
+        switch (type) {
+            case 'flash':
+                return <Clock className="w-5 h-5" />;
+            case 'discount':
+                return <Percent className="w-5 h-5" />;
+            case 'promo':
+                return <Tag className="w-5 h-5" />;
+            default:
+                return <Gift className="w-5 h-5" />;
+        }
+    };
+
+    return (
+        <Card className="group overflow-hidden border-none shadow-md hover:shadow-xl transition-all duration-300">
+            <CardContent className="p-0">
+                <div className={`${deal.color} p-6 relative h-full`}>
+                    {/* Background Pattern */}
+                    <div className="absolute inset-0 opacity-10 background-pattern" />
+
+                    {/* Content */}
+                    <div className="relative z-10">
+                        <div className="flex items-start justify-between mb-4">
+                            <div className={`rounded-full p-2 ${deal.iconBg || 'bg-white/20'}`}>
+                                {getIcon(deal.type)}
+                            </div>
+                            {deal.validUntil && (
+                                <div className="flex items-center text-xs font-medium bg-black/10 rounded-full px-3 py-1">
+                                    <Clock className="w-3 h-3 mr-1" />
+                                    {deal.validUntil}
+                                </div>
+                            )}
+                        </div>
+
+                        <div>
+                            <h3 className="text-lg font-bold mb-2 group-hover:text-gray-700">
+                                {deal.title}
+                            </h3>
+                            <p className="text-sm opacity-90 mb-4">
+                                {deal.description}
+                            </p>
+                            {deal.discount && (
+                                <div className="text-2xl font-bold mb-2">
+                                    {deal.discount}
+                                </div>
+                            )}
+                            {deal.code && (
+                                <div className="bg-white/90 rounded-lg px-3 py-2 text-sm font-mono text-gray-800 inline-block">
+                                    {deal.code}
+                                </div>
+                            )}
+                        </div>
+
+                        <Button
+                            variant="primary"
+                            className="mt-4 w-full bg-white/90 hover:bg-white text-gray-800 shadow-sm"
+                        >
+                            {deal.cta || 'Tuntut Sekarang'}
+                        </Button>
+                    </div>
+                </div>
+            </CardContent>
+        </Card>
+    );
+};
 
 const HomeContent = () => {
     return (
@@ -16,9 +85,12 @@ const HomeContent = () => {
                         <div className="relative z-10 h-full flex flex-col justify-center px-6">
                             <h2 className="text-xl sm:text-4xl font-bold text-white mb-2">Segar & Organik</h2>
                             <p className="text-sm sm:text-xl text-white mb-4">Dapatkan barangan runcit segar dihantar ke pintu rumah anda</p>
-                            <button className="bg-white text-green-800 px-6 py-3 rounded-lg font-semibold text-sm w-fit hover:bg-green-50 transition-all">
+                            <Button
+                                className="bg-white text-green-800 hover:bg-green-50 w-fit"
+                                size="lg"
+                            >
                                 Beli Sekarang
-                            </button>
+                            </Button>
                         </div>
                     </div>
 
@@ -41,34 +113,46 @@ const HomeContent = () => {
                     </div>
                 </div>
 
-                {/* Deals Section*/}
-                <section className="mb-8">
-                    <div className="flex justify-between items-center mb-4">
-                        <h2 className="text-xl lg:text-2xl font-semibold">Tawaran Istimewa</h2>
-                        <button className="text-green-800 text-sm font-medium hover:text-green-600">Lihat Semua</button>
+                {/* Enhanced Deals Section */}
+                <section className="mb-12">
+                    <div className="flex justify-between items-center mb-6">
+                        <div>
+                            <h2 className="text-2xl lg:text-3xl font-bold mb-1">Tawaran Istimewa</h2>
+                            <p className="text-gray-600">Tawaran terhad untuk hari ini</p>
+                        </div>
+                        <Button
+                            variant="ghost"
+                            className="text-green-800 hover:text-green-600 hover:bg-green-50"
+                        >
+                            Lihat Semua
+                            <ChevronRight className="w-4 h-4 ml-1" />
+                        </Button>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {deals.map((deal, index) => (
-                            <Card key={index} className={`${deal.color} border-none transform transition-all hover:scale-105`}>
-                                <CardContent className="p-6">
-                                    <h3 className="text-lg font-semibold text-gray-800 mb-2">{deal.title}</h3>
-                                    <p className="text-sm text-gray-600">{deal.description}</p>
-                                </CardContent>
-                            </Card>
+                            <DealCard key={index} deal={deal} index={index} />
                         ))}
                     </div>
                 </section>
 
                 {/* Featured Products Section */}
                 <section>
-                    <div className="flex justify-between items-center mb-4">
-                        <h2 className="text-xl lg:text-2xl font-semibold">Produk Pilihan</h2>
-                        <Link
-                            href="/products"
-                            className="text-green-800 text-sm font-medium hover:text-green-600"
+                    <div className="flex justify-between items-center mb-6">
+                        <div>
+                            <h2 className="text-2xl lg:text-3xl font-bold mb-1">Produk Pilihan</h2>
+                            <p className="text-gray-600">Produk popular minggu ini</p>
+                        </div>
+                        <Button
+                            variant="ghost"
+                            asChild
+                            className="text-green-800 hover:text-green-600 hover:bg-green-50"
                         >
-                            Lihat Semua
-                        </Link>
+                            <Link href="/products" className="inline-flex items-center">
+                                Lihat Semua
+                                <ChevronRight className="w-4 h-4 ml-1" />
+                            </Link>
+                        </Button>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
                         {featuredProducts.slice(0, 8).map((product, index) => (

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import { ShoppingCart, Minus, Plus, Star, ChevronLeft } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { useCart } from '@/app/context/CartContext';
 import Link from 'next/link';
 import { featuredProducts } from '@/data';
@@ -17,7 +18,7 @@ const ProductDetailsPage = () => {
     const [product, setProduct] = useState(null);
     const [quantity, setQuantity] = useState(1);
     const [isCartModalOpen, setIsCartModalOpen] = useState(false);
-    const { addToCart, cart } = useCart();  // Get cart from useCart hook
+    const { addToCart, cart } = useCart();
     const params = useParams();
 
     useEffect(() => {
@@ -45,7 +46,7 @@ const ProductDetailsPage = () => {
                 ...product,
                 quantity
             });
-            console.log('Cart after adding:', cart);  // Use cart from useCart hook
+            console.log('Cart after adding:', cart);
             setIsCartModalOpen(true);
         }
     };
@@ -59,13 +60,16 @@ const ProductDetailsPage = () => {
     return (
         <main className="container mx-auto px-4 py-8">
             {/* Back Button */}
-            <Link
-                href="/products"
-                className="inline-flex items-center text-green-800 hover:text-green-700 mb-6"
+            <Button
+                variant="ghost"
+                asChild
+                className="text-green-800 hover:text-green-700 hover:bg-green-50 mb-6"
             >
-                <ChevronLeft className="w-5 h-5 mr-1" />
-                Back to Products
-            </Link>
+                <Link href="/products" className="inline-flex items-center">
+                    <ChevronLeft className="w-5 h-5 mr-1" />
+                    Back to Products
+                </Link>
+            </Button>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 lg:min-h-[600px]">
                 {/* Product Image Section */}
@@ -141,37 +145,38 @@ const ProductDetailsPage = () => {
                         {/* Quantity Selector */}
                         <div className="flex items-center space-x-4">
                             <span className="text-gray-700 font-medium">Quantity:</span>
-                            <div className="flex items-center border rounded-lg">
-                                <button
+                            <div className="flex items-center rounded-lg border">
+                                <Button
+                                    variant="ghost"
+                                    size="icon"
                                     onClick={() => handleQuantityChange(-1)}
-                                    className="p-2 hover:bg-gray-100 rounded-l-lg"
-                                    aria-label="Decrease quantity"
+                                    className="h-10 rounded-l-lg border-r"
                                 >
-                                    <Minus className="w-5 h-5 text-gray-600" />
-                                </button>
+                                    <Minus className="w-4 h-4" />
+                                </Button>
                                 <span className="w-12 text-center font-medium">
                                     {quantity}
                                 </span>
-                                <button
+                                <Button
+                                    variant="ghost"
+                                    size="icon"
                                     onClick={() => handleQuantityChange(1)}
-                                    className="p-2 hover:bg-gray-100 rounded-r-lg"
-                                    aria-label="Increase quantity"
+                                    className="h-10 rounded-r-lg border-l"
                                 >
-                                    <Plus className="w-5 h-5 text-gray-600" />
-                                </button>
+                                    <Plus className="w-4 h-4" />
+                                </Button>
                             </div>
                         </div>
 
                         {/* Add to Cart Button */}
-                        <button
+                        <Button
                             onClick={handleAddToCart}
-                            className="w-full bg-green-800 text-white py-4 px-6 rounded-lg font-semibold
-                                     flex items-center justify-center space-x-2 hover:bg-green-700
-                                     transition-colors"
+                            className="w-full bg-green-800 hover:bg-green-700 text-white h-12"
+                            size="lg"
                         >
-                            <ShoppingCart className="w-5 h-5" />
-                            <span>Add to Cart</span>
-                        </button>
+                            <ShoppingCart className="w-5 h-5 mr-2" />
+                            Add to Cart
+                        </Button>
 
                         {/* Additional Product Info Cards */}
                         <div className="grid grid-cols-2 gap-4 mt-6">

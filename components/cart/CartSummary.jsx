@@ -1,6 +1,8 @@
 "use client";
 
 import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { ShoppingBag, ArrowLeft } from 'lucide-react';
 
 const CartSummary = ({ subtotal, shipping, total, isCompact = false }) => {
     return (
@@ -31,17 +33,25 @@ const CartSummary = ({ subtotal, shipping, total, isCompact = false }) => {
                 </div>
             </div>
 
-            <button className="w-full bg-green-800 text-white py-3 rounded-lg mt-6 font-medium hover:bg-green-700 transition-colors">
-                Teruskan ke Pembayaran
-            </button>
+            <div className="mt-6 space-y-3">
+                <Button
+                    className="w-full bg-green-800 hover:bg-green-700 text-white"
+                    size="lg"
+                >
+                    <ShoppingBag className="w-4 h-4 mr-2" />
+                    Teruskan ke Pembayaran
+                </Button>
 
-            {!isCompact && (
-                <div className="mt-4">
-                    <button className="w-full text-green-800 text-sm font-medium hover:underline">
+                {!isCompact && (
+                    <Button
+                        variant="ghost"
+                        className="w-full text-green-800 hover:text-green-700 hover:bg-green-50"
+                    >
+                        <ArrowLeft className="w-4 h-4 mr-2" />
                         Teruskan Membeli-belah
-                    </button>
-                </div>
-            )}
+                    </Button>
+                )}
+            </div>
         </Card>
     );
 };
