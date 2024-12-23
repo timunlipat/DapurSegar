@@ -58,15 +58,13 @@ const ProductDetailsPage = () => {
         setIsCartModalOpen(false);
     };
 
-    const placeholderImage = getPlaceholderImage(product.name);
-
     return (
         <main className="container mx-auto px-4 py-8">
             {/* Back Button */}
             <Button
                 variant="ghost"
                 asChild
-                className="text-green-800 hover:text-green-700 hover:bg-green-50 mb-6"
+                className="text-green-800 hover:text-green-700 hover:bg-green-50 mb-1"
             >
                 <Link href="/products" className="inline-flex items-center">
                     <ChevronLeft className="w-5 h-5 mr-1" />
@@ -77,18 +75,19 @@ const ProductDetailsPage = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 lg:min-h-[600px]">
                 {/* Product Image Section */}
                 <div className="flex items-stretch">
-                    <div className="w-full relative bg-gray-100 rounded-xl overflow-hidden">
+                    <div className="w-full relative bg-gray-100 rounded-xl overflow-hidden min-h-[300px] md:min-h-[400px]">
                         <img
-                            src={placeholderImage}
+                            src={getPlaceholderImage(product.name)}
                             alt={product.name}
                             className="absolute inset-0 w-full h-full object-cover"
                         />
                         {product.discount && (
                             <span className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1.5 rounded-lg font-medium">
                                 {product.discount}
-                            </span>
+                             </span>
                         )}
                     </div>
+
                 </div>
 
                 {/* Product Info Section */}
