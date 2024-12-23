@@ -1,17 +1,12 @@
-import Navbar from '@/components/navbar/Navbar';
-import Footer from '@/components/footer/Footer';
-import MobileNav from '@/components/mobile-nav/MobileNav';
+import MainLayout from '@/components/layout/MainLayout';
 import HomeContent from '@/components/home/HomeContent';
 
-const Page = () => {
+const HomePage = () => {
     return (
-        <div className="min-h-screen bg-gray-50">
-            <Navbar />
-            <MobileNav />
+        <MainLayout>
             <HomeContent />
-            <Footer />
-        </div>
+        </MainLayout>
     );
 };
 
-export default Page;
+export default HomePage;
