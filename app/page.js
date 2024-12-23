@@ -6,6 +6,7 @@ import Navbar from '@/components/navbar/Navbar';
 import Footer from '@/components/footer/Footer';
 import MobileNav from '@/components/mobile-nav/MobileNav';
 import ProductCard from '@/components/product-card/ProductCard';
+import Container from '@/components/Container';
 
 const Page = () => {
     return (
@@ -14,7 +15,9 @@ const Page = () => {
             <Navbar />
 
             {/* Main Content */}
-            <main className="px-4 lg:px-8 py-6">
+
+            <main className="py-6">
+                <Container>
                 {/* Desktop Layout - Two Column Hero Section */}
                 <div className="lg:grid lg:grid-cols-12 lg:gap-6 mb-6">
                     {/* Main Hero Banner */}
@@ -92,6 +95,7 @@ const Page = () => {
                         ))}
                     </div>
                 </section>
+            </Container>
             </main>
 
             {/*MobileNav*/}

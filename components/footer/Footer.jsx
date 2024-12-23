@@ -1,12 +1,17 @@
+import Container from '@/components/Container';
+
 const Footer = () => {
     return (
-            <footer className="bg-green-900 text-white pb-20 lg:pb-8">
-                <div className="px-4 lg:px-8 py-8">
+        <footer className="bg-green-900 text-white pb-20 lg:pb-8">
+            <Container>
+                <div className="py-8">
                     <div className="lg:grid lg:grid-cols-4 lg:gap-8">
                         {/* Company Info */}
                         <div className="hidden lg:block">
                             <h2 className="text-2xl font-bold mb-4">PasarMan</h2>
-                            <p className="text-green-100 text-sm mb-4">Destinasi untuk barangan runcit segar dan organik yang berkualiti tinggi.</p>
+                            <p className="text-green-100 text-sm mb-4">
+                                Destinasi untuk barangan runcit segar dan organik yang berkualiti tinggi.
+                            </p>
                         </div>
 
                         <div className="grid grid-cols-2 gap-8 lg:col-span-2">
@@ -32,7 +37,9 @@ const Footer = () => {
                         {/* Newsletter Section */}
                         <div className="mt-8 lg:mt-0">
                             <h3 className="text-sm font-semibold mb-4">Surat Berita</h3>
-                            <p className="text-green-100 text-sm mb-4">Langgan untuk menerima kemas kini dan tawaran eksklusif.</p>
+                            <p className="text-green-100 text-sm mb-4">
+                                Langgan untuk menerima kemas kini dan tawaran eksklusif.
+                            </p>
                             <div className="flex flex-col space-y-3">
                                 <input
                                     type="email"
@@ -49,13 +56,15 @@ const Footer = () => {
                     <div className="border-t border-green-800 mt-8 pt-8 text-center lg:flex lg:justify-between lg:items-center">
                         <p className="text-green-100 text-sm">&copy; 2024 PasarMan</p>
                         <div className="hidden lg:flex space-x-6">
-                        <a href="#" className="text-green-100 hover:text-white text-sm">Privacy</a>
+                            <a href="#" className="text-green-100 hover:text-white text-sm">Privacy</a>
                             <a href="#" className="text-green-100 hover:text-white text-sm">Terms</a>
                             <a href="#" className="text-green-100 hover:text-white text-sm">Contact Us</a>
                         </div>
                     </div>
                 </div>
-            </footer>
-        )
-    }
+            </Container>
+        </footer>
+    );
+};
+
 export default Footer;
