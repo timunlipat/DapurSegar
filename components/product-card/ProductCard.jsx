@@ -45,8 +45,8 @@ const ProductCard = ({
                 </div>
 
                 {/* Product details */}
-                <div className="space-y-3 md:space-y-4">
-                    <h3 className="font-semibold text-base md:text-lg text-gray-900 line-clamp-2 min-h-[2.75rem] leading-snug">
+                <div className="space-y-3 md:space-y-0">
+                    <h3 className="font-semibold text-base md:text-lg text-gray-900 line-clamp-2 min-h-[2.2rem] leading-snug">
                         {name}
                     </h3>
 
