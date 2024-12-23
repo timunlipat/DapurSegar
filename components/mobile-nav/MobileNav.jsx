@@ -11,7 +11,7 @@ const MobileNav = () => {
 
     return (
         <>
-            {/* Mobile Search Overlay */}
+            {/* Mobile Search */}
             <div
                 className={`fixed inset-0 bg-white z-30 transform transition-transform duration-300 ease-out lg:hidden ${
                     isSearchOpen ? 'translate-y-0' : 'translate-y-full'
@@ -52,7 +52,7 @@ const MobileNav = () => {
                 </div>
             </div>
 
-            {/* Mobile Profile Overlay */}
+            {/* Mobile Profile */}
             <div
                 className={`fixed inset-0 bg-white z-50 transform transition-transform duration-300 ease-out lg:hidden ${
                     isProfileOpen ? 'translate-y-0' : 'translate-y-full'

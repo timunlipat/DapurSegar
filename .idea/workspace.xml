@@ -5,7 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c46b62bf-9db5-4c42-806c-a2f26c7fc134" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/cart/page.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/context/CartContext.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/context/ClientCartProviderWrapper.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cart/CartItem.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cart/CartModal.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/cart/CartSummary.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/ui/dialog.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/mobile-nav/MobileNav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/mobile-nav/MobileNav.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/navbar/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/navbar/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +55,13 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Websites\pasarman\app" />
+      <recent name="D:\Websites\pasarman" />
+      <recent name="D:\Websites\pasarman\" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="pasarman" />
@@ -83,7 +101,7 @@
       <workItem from="1734673984666" duration="4354000" />
       <workItem from="1734678657204" duration="9289000" />
       <workItem from="1734707226289" duration="23000" />
-      <workItem from="1734915628865" duration="6435000" />
+      <workItem from="1734915628865" duration="10837000" />
     </task>
     <servers />
   </component>
@@ -95,7 +113,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/app/page.js</url>
-          <line>19</line>
+          <line>12</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>

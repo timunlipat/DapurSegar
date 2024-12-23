@@ -5,16 +5,26 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { categories } from '@/data';
 import Container from '@/components/Container';
+import CartModal from '@/components/cart/CartModal';
+import { useCart } from '@/app/context/CartContext';
 
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [activeCategory, setActiveCategory] = useState('Semua');
-    const [isCartOpen, setIsCartOpen] = useState(false);
     const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+    const {
+        isCartOpen,
+        setIsCartOpen,
+        cartItems,
+        updateQuantity,
+        removeItem,
+        getCartTotal
+    } = useCart();
+    const { itemCount, subtotal, shipping, total } = getCartTotal();
 
     return (
         <>
-            {/* Mobile Menu Overlay */}
+            {/* Mobile Menu */}
             <div
                 className={`fixed inset-0 bg-black transition-opacity duration-300 lg:hidden z-50 ${
                     isMobileMenuOpen ? 'opacity-50' : 'opacity-0 pointer-events-none'
@@ -57,6 +67,18 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Cart */}
+            <CartModal
+                isOpen={isCartOpen}
+                onClose={() => setIsCartOpen(false)}
+                cartItems={cartItems}
+                updateQuantity={updateQuantity}
+                removeItem={removeItem}
+                subtotal={subtotal}
+                shipping={shipping}
+                total={total}
+            />
 
             {/* Header */}
             <header className="bg-green-800 text-white sticky top-0 z-20">
@@ -159,11 +181,17 @@ const Navbar = () => {
                                 </div>
 
                                 {/* Shopping Cart */}
-                                <button className="relative" onClick={() => setIsCartOpen(!isCartOpen)}>
-                                    <ShoppingCart size={24} />
-                                    <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                                        3
-                                    </span>
+                                <button
+                                    className="relative"
+                                    onClick={() => setIsCartOpen(true)}
+                                    aria-label={`Shopping cart with ${itemCount} items`}
+                                >
+                                    <ShoppingCart size={24}/>
+                                    {itemCount > 0 && (
+                                        <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                            {itemCount}
+                        </span>
+                                    )}
                                 </button>
                             </div>
                         </div>
