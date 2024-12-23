@@ -31,9 +31,7 @@ const CartModal = ({
                             onClick={onClose}
                             className="text-gray-400 hover:text-gray-500"
                             type="button"
-                        >
-                            <X size={20} />
-                        </button>
+                        />
                     </div>
                     <DialogDescription className="sr-only">
                         Senarai item dalam troli belanja anda
@@ -61,13 +59,22 @@ const CartModal = ({
                 </div>
 
                 {cartItems && cartItems.length > 0 && (
-                    <div className="border-t pt-4 px-2">
-                        <CartSummary
-                            subtotal={subtotal}
-                            shipping={shipping}
-                            total={total}
-                            isCompact={true}
-                        />
+                    <div className="lg:col-span-4 mt-8 lg:mt-0">
+                        <div className="sticky top-24">
+                            <CartSummary
+                                subtotal={subtotal}
+                                shipping={shipping}
+                                total={total}
+                            />
+
+                            {shipping > 0 && (
+                                <div className="mt-4 p-4 bg-yellow-50 rounded-lg">
+                                    <p className="text-sm text-yellow-800">
+                                        Tambah RM{(50 - subtotal).toFixed(2)} lagi untuk layak mendapat penghantaran percuma!
+                                    </p>
+                                </div>
+                            )}
+                        </div>
                     </div>
                 )}
             </DialogContent>
