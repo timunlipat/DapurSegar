@@ -1,52 +1,45 @@
 "use client";
 
-import { useState } from 'react';
 import Container from '@/components/Container';
 import CartItem from '@/components/cart/CartItem';
 import CartSummary from '@/components/cart/CartSummary';
+import { useCart } from '@/app/context/CartContext';
+import { ShoppingBag } from 'lucide-react';
 
 const CartPage = () => {
-    const [cartItems, setCartItems] = useState([
-        {
-            id: 1,
-            name: "Epal Fuji",
-            price: 8.90,
-            quantity: 2,
-            unit: "kg",
-            image: "/api/placeholder/100/100"
-        },
-        {
-            id: 2,
-            name: "Brokoli Segar",
-            price: 4.50,
-            quantity: 1,
-            unit: "unit",
-            image: "/api/placeholder/100/100"
-        },
-        {
-            id: 3,
-            name: "Susu Segar",
-            price: 7.90,
-            quantity: 3,
-            unit: "botol",
-            image: "/api/placeholder/100/100"
-        }
-    ]);
+    const {
+        cartItems = [],
+        updateQuantity,
+        removeItem,
+        getCartTotal
+    } = useCart();
 
-    const updateQuantity = (id, newQuantity) => {
-        if (newQuantity < 1) return;
-        setCartItems(cartItems.map(item =>
-            item.id === id ? { ...item, quantity: newQuantity } : item
-        ));
-    };
+    const { subtotal, shipping, total } = getCartTotal();
 
-    const removeItem = (id) => {
-        setCartItems(cartItems.filter(item => item.id !== id));
-    };
-
-    const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    const shipping = subtotal >= 50 ? 0 : 5.90;
-    const total = subtotal + shipping;
+    // Handle empty cart state
+    if (cartItems.length === 0) {
+        return (
+            <main className="py-6 min-h-screen bg-gray-50">
+                <Container>
+                    <div className="text-center py-16">
+                        <div className="flex justify-center mb-6">
+                            <ShoppingBag size={64} className="text-gray-300" />
+                        </div>
+                        <h1 className="text-2xl font-bold text-gray-900 mb-4">Troli Belanja Anda Kosong</h1>
+                        <p className="text-gray-500 mb-8">
+                            Mari mulakan membeli-belah untuk mengisi troli anda!
+                        </p>
+                        <a
+                            href="/"
+                            className="inline-block bg-green-800 text-white px-8 py-3 rounded-lg font-medium hover:bg-green-700 transition-colors"
+                        >
+                            Teruskan Membeli-belah
+                        </a>
+                    </div>
+                </Container>
+            </main>
+        );
+    }
 
     return (
         <main className="py-6 min-h-screen bg-gray-50">
@@ -59,6 +52,7 @@ const CartPage = () => {
                 </div>
 
                 <div className="lg:grid lg:grid-cols-12 lg:gap-8">
+                    {/* Cart Items Section */}
                     <div className="lg:col-span-8">
                         <div className="space-y-4">
                             {cartItems.map((item) => (
@@ -70,14 +64,35 @@ const CartPage = () => {
                                 />
                             ))}
                         </div>
+
+                        {/* Continue Shopping Link */}
+                        <div className="mt-8 text-center lg:text-left">
+                            <a
+                                href="/"
+                                className="text-green-800 font-medium hover:underline"
+                            >
+                                ← Teruskan Membeli-belah
+                            </a>
+                        </div>
                     </div>
 
-                    <div className="lg:col-span-4 mt-6 lg:mt-0">
-                        <CartSummary
-                            subtotal={subtotal}
-                            shipping={shipping}
-                            total={total}
-                        />
+                    {/* Cart Summary Section */}
+                    <div className="lg:col-span-4 mt-8 lg:mt-0">
+                        <div className="sticky top-24">
+                            <CartSummary
+                                subtotal={subtotal}
+                                shipping={shipping}
+                                total={total}
+                            />
+
+                            {shipping > 0 && (
+                                <div className="mt-4 p-4 bg-yellow-50 rounded-lg">
+                                    <p className="text-sm text-yellow-800">
+                                        Tambah RM{(50 - subtotal).toFixed(2)} lagi untuk layak mendapat penghantaran percuma!
+                                    </p>
+                                </div>
+                            )}
+                        </div>
                     </div>
                 </div>
             </Container>
