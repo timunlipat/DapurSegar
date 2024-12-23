@@ -15,39 +15,51 @@ const Navbar = () => {
     return (
         <>
             {/* Mobile Menu Overlay */}
-            {isMobileMenuOpen && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 z-50 lg:hidden">
-                    <div className="fixed inset-y-0 left-0 w-full max-w-sm bg-white shadow-lg">
-                        <div className="h-full flex flex-col">
-                            <div className="p-4 border-b">
-                                <div className="flex justify-between items-center">
-                                    <h2 className="text-xl font-bold text-green-800">Menu</h2>
-                                    <button onClick={() => setIsMobileMenuOpen(false)}>
-                                        <X size={24} className="text-gray-500" />
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div className="flex-1 overflow-y-auto">
-                                <nav className="p-4">
-                                    <div className="space-y-4">
-                                        {categories.map(category => (
-                                            <a key={category} href="#"
-                                               className="flex items-center justify-between p-2 rounded-lg hover:bg-green-50">
-                                                <span className="text-gray-700">{category}</span>
-                                                <ChevronRight size={20} className="text-gray-400" />
-                                            </a>
-                                        ))}
-                                    </div>
-                                </nav>
-                            </div>
+            <div
+                className={`fixed inset-0 bg-black transition-opacity duration-300 lg:hidden z-[90] ${
+                    isMobileMenuOpen ? 'opacity-50' : 'opacity-0 pointer-events-none'
+                }`}
+                onClick={() => setIsMobileMenuOpen(false)}
+            />
+            <div
+                className={`fixed inset-y-0 left-0 w-full max-w-sm bg-white shadow-lg transform transition-transform duration-300 ease-out lg:hidden z-[90] ${
+                    isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+                }`}
+            >
+                <div className="h-full flex flex-col">
+                    <div className="p-4 border-b">
+                        <div className="flex justify-between items-center">
+                            <h2 className="text-xl font-bold text-green-800">Menu</h2>
+                            <button
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                            >
+                                <X size={24} className="text-gray-500" />
+                            </button>
                         </div>
                     </div>
+
+                    <div className="flex-1 overflow-y-auto">
+                        <nav className="p-4">
+                            <div className="space-y-4">
+                                {categories.map(category => (
+                                    <a
+                                        key={category}
+                                        href="#"
+                                        className="flex items-center justify-between p-2 rounded-lg hover:bg-green-50 transition-colors"
+                                    >
+                                        <span className="text-gray-700">{category}</span>
+                                        <ChevronRight size={20} className="text-gray-400" />
+                                    </a>
+                                ))}
+                            </div>
+                        </nav>
+                    </div>
                 </div>
-            )}
+            </div>
 
             {/* Header */}
-            <header className="bg-green-800 text-white sticky top-0 z-40">
+            <header className="bg-green-800 text-white sticky top-0 z-50">
                 {/* Top Promo Banner */}
                 <div className="bg-green-900">
                     <Container>
@@ -76,7 +88,7 @@ const Navbar = () => {
                                                 <span>{category}</span>
                                                 <ChevronDown size={16} />
                                             </button>
-                                            <div className="absolute hidden group-hover:block w-48 bg-white rounded-lg shadow-lg p-2 mt-1">
+                                            <div className="absolute hidden group-hover:block w-48 bg-white rounded-lg shadow-lg p-2 mt-1 z-[70]">
                                                 <div className="py-1">
                                                     <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50 rounded-md">
                                                         Subcategory 1
@@ -127,7 +139,7 @@ const Navbar = () => {
                                         </button>
 
                                         {isUserMenuOpen && (
-                                            <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2">
+                                            <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-[70]">
                                                 <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50">
                                                     Profil Saya
                                                 </a>
