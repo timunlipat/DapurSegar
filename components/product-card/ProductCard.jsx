@@ -3,7 +3,10 @@ import { ShoppingCart } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 import { useCart } from '@/app/context/CartContext';
 
-const placeholderImage = "https://placehold.co/400x400"
+const getPlaceholderImage = (name) => {
+    const encodedName = encodeURIComponent(name);
+    return `https://placehold.co/400x400/e2e8f0/1e293b/png?text=${encodedName}`;
+};
 
 const ProductCard = ({
                          id,
@@ -16,6 +19,7 @@ const ProductCard = ({
                          image = placeholderImage
                      }) => {
     const { addToCart } = useCart();
+    const imageUrl = image || getPlaceholderImage(name);
 
     const handleAddToCart = () => {
         addToCart({
@@ -23,7 +27,7 @@ const ProductCard = ({
             name,
             price,
             unit,
-            image
+            image: imageUrl
         });
     };
 
@@ -33,7 +37,7 @@ const ProductCard = ({
                 {/* Image container with fixed ratio */}
                 <div className="relative w-full pt-[100%] bg-gray-100 rounded-lg mb-4 md:mb-5">
                     <img
-                        src={image}
+                        src={imageUrl}
                         alt={name}
                         className="absolute inset-0 w-full h-full object-cover rounded-lg"
                     />

@@ -4,14 +4,29 @@ import { Minus, Plus, Trash2 } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 
 const CartItem = ({ item, updateQuantity, removeItem, isCompact = false }) => {
+    // Default placeholder for empty images
+    const placeholderImage = `https://placehold.co/400x400/e2e8f0/1e293b/png?text=${encodeURIComponent(item.name)}`;
+
     return (
         <Card className={`p-4 ${isCompact ? 'mb-2' : 'mb-4'}`}>
             <div className="flex items-center space-x-4">
-                <img
-                    src={item.image}
-                    alt={item.name}
-                    className={`object-cover rounded-lg ${isCompact ? 'w-16 h-16' : 'w-20 h-20'}`}
-                />
+                {/* Only render img if there's a valid source */}
+                <div className={`relative bg-gray-100 rounded-lg ${isCompact ? 'w-16 h-16' : 'w-20 h-20'}`}>
+                    {item.image ? (
+                        <img
+                            src={item.image}
+                            alt={item.name}
+                            className="object-cover rounded-lg w-full h-full"
+                        />
+                    ) : (
+                        <img
+                            src={placeholderImage}
+                            alt={item.name}
+                            className="object-cover rounded-lg w-full h-full"
+                        />
+                    )}
+                </div>
+
                 <div className="flex-1">
                     <h3 className="font-medium text-gray-900">{item.name}</h3>
                     <p className="text-sm text-gray-500 mt-1">RM{item.price.toFixed(2)} / {item.unit}</p>

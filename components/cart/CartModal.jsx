@@ -21,6 +21,11 @@ const CartModal = ({
                        shipping,
                        total
                    }) => {
+    const totalQuantity = cartItems.reduce((sum, item) => sum + (item.quantity || 0), 0);
+
+    // Debug logging
+    console.log('Cart Items:', cartItems);
+    console.log('Total Items:', totalQuantity);
     return (
         <Dialog open={isOpen} onOpenChange={onClose}>
             <DialogContent className="sm:max-w-[425px] max-h-[90vh] overflow-hidden flex flex-col">

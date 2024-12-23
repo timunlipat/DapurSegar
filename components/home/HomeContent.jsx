@@ -74,12 +74,15 @@ const HomeContent = () => {
                         {featuredProducts.slice(0, 8).map((product, index) => (
                             <div key={index} className={index >= 4 ? 'hidden md:block' : ''}>
                                 <ProductCard
+                                    id={product.id}
                                     name={product.name}
                                     price={product.price}
                                     unit={product.unit}
                                     rating={product.rating}
                                     reviews={product.reviews}
                                     discount={product.discount}
+                                    image={product.image}
+                                    description={product.description}
                                 />
                             </div>
                         ))}
