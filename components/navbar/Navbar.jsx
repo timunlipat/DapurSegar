@@ -1,5 +1,5 @@
 "use client";
-import { Search, ShoppingCart, Menu, User, Heart, X, ChevronRight, ChevronDown } from 'lucide-react';
+import { Search, ShoppingCart, Menu, User, Heart, X, ChevronRight, ChevronDown, Settings } from 'lucide-react';
 import { useState } from 'react';
 import Link from 'next/link';
 import { categories } from '@/data';
@@ -179,6 +179,15 @@ const Navbar = () => {
                                     </div>
                                 </div>
 
+                                {/* Settings Icon */}
+                                <Link
+                                    href="/settings"
+                                    className="text-green-100 hover:text-white"
+                                    aria-label="Settings"
+                                >
+                                    <Settings size={24} />
+                                </Link>
+
                                 {/* Shopping Cart */}
                                 <button
                                     className="relative"
@@ -188,8 +197,8 @@ const Navbar = () => {
                                     <ShoppingCart size={24}/>
                                     {itemCount > 0 && (
                                         <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                            {itemCount}
-                        </span>
+                                            {itemCount}
+                                        </span>
                                     )}
                                 </button>
                             </div>
