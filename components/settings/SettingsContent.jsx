@@ -42,41 +42,41 @@ const SettingsContent = () => {
                     <p className="text-gray-600">Customize your grocery shopping experience</p>
                 </div>
 
-                {/* Main Content */}
+                {/* Tabs */}
                 <Tabs defaultValue="delivery" className="space-y-6">
-                    <div className="overflow-x-auto whitespace-nowrap mb-6">
-                        <TabsList className="flex bg-transparent gap-2 min-w-max px-1">
+                    <div className="overflow-x-auto lg:overflow-x-visible">
+                        <TabsList className="flex flex-nowrap lg:flex-wrap gap-2 w-full mb-6 bg-transparent min-w-max lg:min-w-0 pr-4 lg:pr-0">
                             <TabsTrigger
                                 value="delivery"
-                                className="min-w-[120px] data-[state=active]:bg-green-800 data-[state=active]:text-white"
+                                className="flex-none lg:flex-1 min-w-[120px] data-[state=active]:bg-green-800 data-[state=active]:text-white"
                             >
                                 <Truck className="w-4 h-4 mr-2" />
                                 Delivery
                             </TabsTrigger>
                             <TabsTrigger
                                 value="preferences"
-                                className="min-w-[120px] data-[state=active]:bg-green-800 data-[state=active]:text-white"
+                                className="flex-none lg:flex-1 min-w-[120px] data-[state=active]:bg-green-800 data-[state=active]:text-white"
                             >
                                 <Apple className="w-4 h-4 mr-2" />
                                 Preferences
                             </TabsTrigger>
                             <TabsTrigger
                                 value="account"
-                                className="min-w-[120px] data-[state=active]:bg-green-800 data-[state=active]:text-white"
+                                className="flex-none lg:flex-1 min-w-[120px] data-[state=active]:bg-green-800 data-[state=active]:text-white"
                             >
                                 <User className="w-4 h-4 mr-2" />
                                 Account
                             </TabsTrigger>
                             <TabsTrigger
                                 value="notifications"
-                                className="min-w-[120px] data-[state=active]:bg-green-800 data-[state=active]:text-white"
+                                className="flex-none lg:flex-1 min-w-[120px] data-[state=active]:bg-green-800 data-[state=active]:text-white"
                             >
                                 <Bell className="w-4 h-4 mr-2" />
                                 Notifications
                             </TabsTrigger>
                             <TabsTrigger
                                 value="payment"
-                                className="min-w-[120px] data-[state=active]:bg-green-800 data-[state=active]:text-white"
+                                className="flex-none lg:flex-1 min-w-[120px] data-[state=active]:bg-green-800 data-[state=active]:text-white"
                             >
                                 <CreditCard className="w-4 h-4 mr-2" />
                                 Payment
