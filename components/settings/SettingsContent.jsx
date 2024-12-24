@@ -38,8 +38,8 @@ const SettingsContent = () => {
             <Container>
                 {/* Header */}
                 <div className="space-y-2 mb-8">
-                    <h1 className="text-2xl lg:text-3xl font-bold text-gray-900">Settings</h1>
-                    <p className="text-gray-600">Customize your grocery shopping experience</p>
+                    <h1 className="text-2xl lg:text-3xl font-bold text-gray-900">Tetapan</h1>
+                    <p className="text-gray-600">Sesuaikan pengalaman membeli-belah runcit anda</p>
                 </div>
 
                 {/* Tabs */}
@@ -51,35 +51,35 @@ const SettingsContent = () => {
                                 className="flex-none lg:flex-1 min-w-[120px] data-[state=active]:bg-green-800 data-[state=active]:text-white"
                             >
                                 <Truck className="w-4 h-4 mr-2" />
-                                Delivery
+                                Penghantaran
                             </TabsTrigger>
                             <TabsTrigger
                                 value="preferences"
                                 className="flex-none lg:flex-1 min-w-[120px] data-[state=active]:bg-green-800 data-[state=active]:text-white"
                             >
                                 <Apple className="w-4 h-4 mr-2" />
-                                Preferences
+                                Pilihan
                             </TabsTrigger>
                             <TabsTrigger
                                 value="account"
                                 className="flex-none lg:flex-1 min-w-[120px] data-[state=active]:bg-green-800 data-[state=active]:text-white"
                             >
                                 <User className="w-4 h-4 mr-2" />
-                                Account
+                                Akaun
                             </TabsTrigger>
                             <TabsTrigger
                                 value="notifications"
                                 className="flex-none lg:flex-1 min-w-[120px] data-[state=active]:bg-green-800 data-[state=active]:text-white"
                             >
                                 <Bell className="w-4 h-4 mr-2" />
-                                Notifications
+                                Pemberitahuan
                             </TabsTrigger>
                             <TabsTrigger
                                 value="payment"
                                 className="flex-none lg:flex-1 min-w-[120px] data-[state=active]:bg-green-800 data-[state=active]:text-white"
                             >
                                 <CreditCard className="w-4 h-4 mr-2" />
-                                Payment
+                                Pembayaran
                             </TabsTrigger>
                         </TabsList>
                     </div>
@@ -90,9 +90,9 @@ const SettingsContent = () => {
                             <CardHeader>
                                 <div className="flex items-center space-x-2">
                                     <Truck className="h-5 w-5 text-green-800"/>
-                                    <CardTitle>Delivery Addresses</CardTitle>
+                                    <CardTitle>Alamat Penghantaran</CardTitle>
                                 </div>
-                                <CardDescription>Manage your delivery locations</CardDescription>
+                                <CardDescription>Urus lokasi penghantaran anda</CardDescription>
                             </CardHeader>
                             <CardContent className="space-y-6">
                                 <div className="rounded-lg border p-4 space-y-4">
@@ -102,26 +102,26 @@ const SettingsContent = () => {
                                                 <Home className="h-4 w-4 text-green-800"/>
                                             </div>
                                             <div>
-                                                <p className="font-medium">Home</p>
+                                                <p className="font-medium">Rumah</p>
                                                 <p className="text-sm text-gray-500">123 Jalan Sultan Ismail, Kuala Lumpur</p>
                                             </div>
                                         </div>
-                                        <Button variant="outline" className="text-green-800 hover:bg-green-50">Edit</Button>
+                                        <Button variant="outline" className="text-green-800 hover:bg-green-50">Sunting</Button>
                                     </div>
                                 </div>
-                                <Button className="w-full bg-green-800 hover:bg-green-700 text-white">Add New Address</Button>
+                                <Button className="w-full bg-green-800 hover:bg-green-700 text-white">Tambah Alamat Baru</Button>
 
                                 <div className="space-y-4 pt-4">
-                                    <Label>Preferred Delivery Time</Label>
+                                    <Label>Masa Penghantaran Pilihan</Label>
                                     <Select defaultValue="morning">
                                         <SelectTrigger className="border-gray-200">
-                                            <SelectValue placeholder="Select delivery time"/>
+                                            <SelectValue placeholder="Pilih masa penghantaran"/>
                                         </SelectTrigger>
                                         <SelectContent>
-                                            <SelectItem value="morning">Morning (9AM - 12PM)</SelectItem>
-                                            <SelectItem value="afternoon">Afternoon (2PM - 5PM)</SelectItem>
-                                            <SelectItem value="evening">Evening (7PM - 10PM)</SelectItem>
-                                            <SelectItem value="express">Express Delivery (Within 2 hours)</SelectItem>
+                                            <SelectItem value="morning">Pagi (9 PAGI - 12 TENGAH HARI)</SelectItem>
+                                            <SelectItem value="afternoon">Tengah Hari (2 PETANG - 5 PETANG)</SelectItem>
+                                            <SelectItem value="evening">Petang (7 MALAM - 10 MALAM)</SelectItem>
+                                            <SelectItem value="express">Penghantaran Segera (Dalam masa 2 jam)</SelectItem>
                                         </SelectContent>
                                     </Select>
                                 </div>
@@ -135,40 +135,40 @@ const SettingsContent = () => {
                             <CardHeader>
                                 <div className="flex items-center space-x-2">
                                     <Apple className="h-5 w-5 text-green-800"/>
-                                    <CardTitle>Shopping Preferences</CardTitle>
+                                    <CardTitle>Pilihan Membeli-Belah</CardTitle>
                                 </div>
-                                <CardDescription>Customize your grocery shopping experience</CardDescription>
+                                <CardDescription>Sesuaikan pengalaman membeli-belah runcit anda</CardDescription>
                             </CardHeader>
                             <CardContent className="space-y-6">
                                 <div className="space-y-6">
                                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                                         <div className="space-y-0.5">
-                                            <Label>Organic Preference</Label>
-                                            <p className="text-sm text-gray-500">Prioritize organic products when available</p>
+                                            <Label>Pilihan Organik</Label>
+                                            <p className="text-sm text-gray-500">Utamakan produk organik apabila tersedia</p>
                                         </div>
                                         <Switch defaultChecked className="data-[state=checked]:bg-green-800"/>
                                     </div>
                                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                                         <div className="space-y-0.5">
-                                            <Label>Dietary Restrictions</Label>
-                                            <p className="text-sm text-gray-500">Show relevant dietary warnings</p>
+                                            <Label>Sekatan Pemakanan</Label>
+                                            <p className="text-sm text-gray-500">Tunjukkan amaran pemakanan yang berkaitan</p>
                                         </div>
                                         <Switch defaultChecked className="data-[state=checked]:bg-green-800"/>
                                     </div>
 
                                     {/* Dietary Preferences */}
                                     <div className="space-y-2">
-                                        <Label>Dietary Preferences</Label>
+                                        <Label>Pilihan Pemakanan</Label>
                                         <Select defaultValue="none">
                                             <SelectTrigger className="border-gray-200">
-                                                <SelectValue placeholder="Select dietary preference"/>
+                                                <SelectValue placeholder="Pilih keutamaan pemakanan"/>
                                             </SelectTrigger>
                                             <SelectContent>
-                                                <SelectItem value="none">No Restrictions</SelectItem>
-                                                <SelectItem value="halal">Halal Certified Only</SelectItem>
+                                                <SelectItem value="none">Tiada Sekatan</SelectItem>
+                                                <SelectItem value="halal">Sijil Halal Sahaja</SelectItem>
                                                 <SelectItem value="vegetarian">Vegetarian</SelectItem>
                                                 <SelectItem value="vegan">Vegan</SelectItem>
-                                                <SelectItem value="glutenFree">Gluten Free</SelectItem>
+                                                <SelectItem value="glutenFree">Bebas Gluten</SelectItem>
                                                 <SelectItem value="kosher">Kosher</SelectItem>
                                             </SelectContent>
                                         </Select>
@@ -176,25 +176,25 @@ const SettingsContent = () => {
 
                                     {/* Product Substitution */}
                                     <div className="space-y-2">
-                                        <Label>Product Substitution Preferences</Label>
+                                        <Label>Pilihan Penggantian Produk</Label>
                                         <Select defaultValue="similar">
                                             <SelectTrigger className="border-gray-200">
-                                                <SelectValue placeholder="Select substitution preference"/>
+                                                <SelectValue placeholder="Pilih keutamaan penggantian"/>
                                             </SelectTrigger>
                                             <SelectContent>
-                                                <SelectItem value="similar">Allow Similar Items (Same Halal Status)</SelectItem>
-                                                <SelectItem value="contact">WhatsApp Me First</SelectItem>
-                                                <SelectItem value="never">Never Substitute</SelectItem>
+                                                <SelectItem value="similar">Benarkan Item Serupa (Status Halal Sama)</SelectItem>
+                                                <SelectItem value="contact">WhatsApp Saya Dahulu</SelectItem>
+                                                <SelectItem value="never">Jangan Ganti</SelectItem>
                                             </SelectContent>
                                         </Select>
                                     </div>
 
                                     {/* Language Preference */}
                                     <div className="space-y-2">
-                                        <Label>Preferred Language</Label>
-                                        <Select defaultValue="en">
+                                        <Label>Bahasa Pilihan</Label>
+                                        <Select defaultValue="ms">
                                             <SelectTrigger className="border-gray-200">
-                                                <SelectValue placeholder="Select preferred language"/>
+                                                <SelectValue placeholder="Pilih bahasa pilihan"/>
                                             </SelectTrigger>
                                             <SelectContent>
                                                 <SelectItem value="en">English</SelectItem>
@@ -215,31 +215,31 @@ const SettingsContent = () => {
                             <CardHeader>
                                 <div className="flex items-center space-x-2">
                                     <User className="h-5 w-5 text-green-800"/>
-                                    <CardTitle>Personal Information</CardTitle>
+                                    <CardTitle>Maklumat Peribadi</CardTitle>
                                 </div>
-                                <CardDescription>Update your account details</CardDescription>
+                                <CardDescription>Kemaskini butiran akaun anda</CardDescription>
                             </CardHeader>
                             <CardContent className="space-y-6">
                                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                                     <div className="space-y-2">
-                                        <Label htmlFor="firstName">First name</Label>
-                                        <Input id="firstName" placeholder="Enter your first name" className="border-gray-200"/>
+                                        <Label htmlFor="firstName">Nama pertama</Label>
+                                        <Input id="firstName" placeholder="Masukkan nama pertama anda" className="border-gray-200"/>
                                     </div>
                                     <div className="space-y-2">
-                                        <Label htmlFor="lastName">Last name</Label>
-                                        <Input id="lastName" placeholder="Enter your last name" className="border-gray-200"/>
+                                        <Label htmlFor="lastName">Nama akhir</Label>
+                                        <Input id="lastName" placeholder="Masukkan nama akhir anda" className="border-gray-200"/>
                                     </div>
                                     <div className="space-y-2">
-                                        <Label htmlFor="email">Email</Label>
-                                        <Input id="email" type="email" placeholder="Enter your email" className="border-gray-200"/>
+                                        <Label htmlFor="email">Emel</Label>
+                                        <Input id="email" type="email" placeholder="Masukkan emel anda" className="border-gray-200"/>
                                     </div>
                                     <div className="space-y-2">
-                                        <Label htmlFor="phone">Phone number</Label>
-                                        <Input id="phone" type="tel" placeholder="Enter your phone number" className="border-gray-200"/>
+                                        <Label htmlFor="phone">Nombor telefon</Label>
+                                        <Input id="phone" type="tel" placeholder="Masukkan nombor telefon anda" className="border-gray-200"/>
                                     </div>
                                 </div>
                                 <div className="flex justify-end">
-                                    <Button className="bg-green-800 hover:bg-green-700 text-white">Save Changes</Button>
+                                    <Button className="bg-green-800 hover:bg-green-700 text-white">Simpan Perubahan</Button>
                                 </div>
                             </CardContent>
                         </Card>
@@ -248,23 +248,23 @@ const SettingsContent = () => {
                             <CardHeader>
                                 <div className="flex items-center space-x-2">
                                     <Shield className="h-5 w-5 text-green-800"/>
-                                    <CardTitle>Security</CardTitle>
+                                    <CardTitle>Keselamatan</CardTitle>
                                 </div>
-                                <CardDescription>Manage your password and security settings</CardDescription>
+                                <CardDescription>Urus kata laluan dan tetapan keselamatan anda</CardDescription>
                             </CardHeader>
                             <CardContent className="space-y-6">
                                 <div className="space-y-4">
                                     <div className="space-y-2">
-                                        <Label htmlFor="currentPassword">Current Password</Label>
+                                        <Label htmlFor="currentPassword">Kata Laluan Semasa</Label>
                                         <Input id="currentPassword" type="password" className="border-gray-200"/>
                                     </div>
                                     <div className="space-y-2">
-                                        <Label htmlFor="newPassword">New Password</Label>
+                                        <Label htmlFor="newPassword">Kata Laluan Baru</Label>
                                         <Input id="newPassword" type="password" className="border-gray-200"/>
                                     </div>
                                 </div>
                                 <div className="flex justify-end">
-                                    <Button className="bg-green-800 hover:bg-green-700 text-white">Update Password</Button>
+                                    <Button className="bg-green-800 hover:bg-green-700 text-white">Kemaskini Kata Laluan</Button>
                                 </div>
                             </CardContent>
                         </Card>
@@ -276,16 +276,16 @@ const SettingsContent = () => {
                             <CardHeader>
                                 <div className="flex items-center space-x-2">
                                     <Bell className="h-5 w-5 text-green-800"/>
-                                    <CardTitle>Notification Settings</CardTitle>
+                                    <CardTitle>Tetapan Pemberitahuan</CardTitle>
                                 </div>
-                                <CardDescription>Choose how you want to be notified</CardDescription>
+                                <CardDescription>Pilih cara anda ingin diberitahu</CardDescription>
                             </CardHeader>
                             <CardContent className="space-y-6">
                                 <div className="space-y-6">
                                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                                         <div className="space-y-0.5">
-                                            <Label>Order Updates</Label>
-                                            <p className="text-sm text-gray-500">Get notifications about your order status</p>
+                                            <Label>Kemaskini Pesanan</Label>
+                                            <p className="text-sm text-gray-500">Dapatkan pemberitahuan tentang status pesanan anda</p>
                                         </div>
                                         <Switch
                                             checked={notifications.orderUpdates}
@@ -295,8 +295,8 @@ const SettingsContent = () => {
                                     </div>
                                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                                         <div className="space-y-0.5">
-                                            <Label>Delivery Alerts</Label>
-                                            <p className="text-sm text-gray-500">Receive updates about your delivery</p>
+                                            <Label>Makluman Penghantaran</Label>
+                                            <p className="text-sm text-gray-500">Terima kemaskini tentang penghantaran anda</p>
                                         </div>
                                         <Switch
                                             checked={notifications.deliveryAlerts}
@@ -306,8 +306,8 @@ const SettingsContent = () => {
                                     </div>
                                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                                         <div className="space-y-0.5">
-                                            <Label>Special Offers</Label>
-                                            <p className="text-sm text-gray-500">Get notified about deals and promotions</p>
+                                            <Label>Tawaran Istimewa</Label>
+                                            <p className="text-sm text-gray-500">Dapatkan pemberitahuan tentang tawaran dan promosi</p>
                                         </div>
                                         <Switch
                                             checked={notifications.specialOffers}
@@ -317,8 +317,8 @@ const SettingsContent = () => {
                                     </div>
                                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                                         <div className="space-y-0.5">
-                                            <Label>Stock Alerts</Label>
-                                            <p className="text-sm text-gray-500">Notifications when favorite items are back in stock</p>
+                                            <Label>Makluman Stok</Label>
+                                            <p className="text-sm text-gray-500">Pemberitahuan apabila item kegemaran kembali ada dalam stok</p>
                                         </div>
                                         <Switch
                                             checked={notifications.stockAlerts}
@@ -337,9 +337,9 @@ const SettingsContent = () => {
                             <CardHeader>
                                 <div className="flex items-center space-x-2">
                                     <CreditCard className="h-5 w-5 text-green-800"/>
-                                    <CardTitle>Payment Methods</CardTitle>
+                                    <CardTitle>Kaedah Pembayaran</CardTitle>
                                 </div>
-                                <CardDescription>Manage your payment options</CardDescription>
+                                <CardDescription>Urus pilihan pembayaran anda</CardDescription>
                             </CardHeader>
                             <CardContent className="space-y-6">
                                 <div className="rounded-lg border p-4">
@@ -350,13 +350,13 @@ const SettingsContent = () => {
                                             </div>
                                             <div>
                                                 <p className="font-medium">•••• •••• •••• 4242</p>
-                                                <p className="text-sm text-gray-500">Expires 12/24</p>
+                                                <p className="text-sm text-gray-500">Tamat 12/24</p>
                                             </div>
                                         </div>
-                                        <Button variant="outline" className="text-green-800 hover:bg-green-50">Edit</Button>
+                                        <Button variant="outline" className="text-green-800 hover:bg-green-50">Sunting</Button>
                                     </div>
                                 </div>
-                                <Button className="w-full bg-green-800 hover:bg-green-700 text-white">Add New Payment Method</Button>
+                                <Button className="w-full bg-green-800 hover:bg-green-700 text-white">Tambah Kaedah Pembayaran Baru</Button>
                             </CardContent>
                         </Card>
 
@@ -364,17 +364,17 @@ const SettingsContent = () => {
                             <CardHeader>
                                 <div className="flex items-center space-x-2">
                                     <Clock className="h-5 w-5 text-green-800"/>
-                                    <CardTitle>Order History</CardTitle>
+                                    <CardTitle>Sejarah Pesanan</CardTitle>
                                 </div>
-                                <CardDescription>View your recent orders and transactions</CardDescription>
+                                <CardDescription>Lihat pesanan dan transaksi terkini anda</CardDescription>
                             </CardHeader>
                             <CardContent>
                                 <div className="space-y-4">
                                     {[1, 2, 3].map((i) => (
                                         <div key={i} className="flex flex-col sm:flex-row sm:items-center justify-between border-b pb-4 last:border-0 gap-2">
                                             <div>
-                                                <p className="font-medium">Order #1234{i}</p>
-                                                <p className="text-sm text-gray-500">Dec {i}, 2024</p>
+                                                <p className="font-medium">Pesanan #1234{i}</p>
+                                                <p className="text-sm text-gray-500">Dis {i}, 2024</p>
                                             </div>
                                             <div className="text-right flex flex-col sm:items-end gap-1">
                                                 <p className="font-medium">RM 250.00</p>
@@ -382,7 +382,7 @@ const SettingsContent = () => {
                                                     variant="link"
                                                     className="h-auto p-0 text-green-800 hover:text-green-700"
                                                 >
-                                                    View Details
+                                                    Lihat Butiran
                                                 </Button>
                                             </div>
                                         </div>
