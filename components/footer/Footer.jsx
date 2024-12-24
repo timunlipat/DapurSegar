@@ -1,4 +1,6 @@
 import Container from '@/components/Container';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 
 const Footer = () => {
     return (
@@ -41,20 +43,20 @@ const Footer = () => {
                                 Langgan untuk menerima kemas kini dan tawaran eksklusif.
                             </p>
                             <div className="flex flex-col space-y-3">
-                                <input
+                                <Input
                                     type="email"
                                     placeholder="Masukkan emel anda"
-                                    className="w-full px-4 py-2 rounded-lg text-gray-800 text-sm focus:ring-2 focus:ring-green-500 focus:outline-none"
+                                    className="bg-white text-gray-800"
                                 />
-                                <button className="w-full bg-green-700 px-4 py-2 rounded-lg text-sm hover:bg-green-600 transition-colors">
+                                <Button className="w-full bg-green-700">
                                     Langgan
-                                </button>
+                                </Button>
                             </div>
                         </div>
                     </div>
 
                     <div className="border-t border-green-800 mt-8 pt-8 text-center lg:flex lg:justify-between lg:items-center">
-                        <p className="text-green-100 text-sm">&copy; 2024 PasarMan</p>
+                        <p className="text-green-100 text-sm">&copy; {new Date().getFullYear()} PasarMan</p>
                         <div className="hidden lg:flex space-x-6">
                             <a href="#" className="text-green-100 hover:text-white text-sm">Privacy</a>
                             <a href="#" className="text-green-100 hover:text-white text-sm">Terms</a>
