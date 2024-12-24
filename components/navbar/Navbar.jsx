@@ -1,5 +1,4 @@
 "use client";
-
 import { Search, ShoppingCart, Menu, User, Heart, X, ChevronRight, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 import Link from 'next/link';

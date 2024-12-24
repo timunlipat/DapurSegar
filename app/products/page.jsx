@@ -132,7 +132,8 @@ const ProductListingPage = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
                     {filteredProducts.map((product, index) => (
                         <ProductCard
-                            key={index}
+                            key={product.id}
+                            id={product.id}
                             name={product.name}
                             price={product.price}
                             unit={product.unit}
