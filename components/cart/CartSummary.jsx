@@ -35,7 +35,7 @@ const CartSummary = ({ subtotal, shipping, total, isCompact = false }) => {
 
             <div className="mt-6 space-y-3">
                 <Button
-                    className="w-full bg-green-800 hover:bg-green-700 text-white"
+                    className="w-full"
                     size="lg"
                 >
                     <ShoppingBag className="w-4 h-4 mr-2" />
@@ -45,7 +45,7 @@ const CartSummary = ({ subtotal, shipping, total, isCompact = false }) => {
                 {!isCompact && (
                     <Button
                         variant="ghost"
-                        className="w-full text-green-800 hover:text-green-700 hover:bg-green-50"
+                        className="w-full"
                     >
                         <ArrowLeft className="w-4 h-4 mr-2" />
                         Teruskan Membeli-belah

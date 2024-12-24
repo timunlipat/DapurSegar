@@ -106,10 +106,10 @@ const SettingsContent = () => {
                                                 <p className="text-sm text-gray-500">123 Jalan Sultan Ismail, Kuala Lumpur</p>
                                             </div>
                                         </div>
-                                        <Button variant="outline" className="text-green-800 hover:bg-green-50">Ubah Alamat</Button>
+                                        <Button variant="outline">Ubah Alamat</Button>
                                     </div>
                                 </div>
-                                <Button className="w-full bg-green-800 hover:bg-green-700 text-white">Tambah Alamat Baru</Button>
+                                <Button className="w-full">Tambah Alamat Baru</Button>
 
                                 <div className="space-y-4 pt-4">
                                     <Label>Masa Penghantaran Pilihan</Label>
@@ -239,7 +239,7 @@ const SettingsContent = () => {
                                     </div>
                                 </div>
                                 <div className="flex justify-end">
-                                    <Button className="bg-green-800 hover:bg-green-700 text-white">Simpan Perubahan</Button>
+                                    <Button>Simpan Perubahan</Button>
                                 </div>
                             </CardContent>
                         </Card>
@@ -264,7 +264,7 @@ const SettingsContent = () => {
                                     </div>
                                 </div>
                                 <div className="flex justify-end">
-                                    <Button className="bg-green-800 hover:bg-green-700 text-white">Kemaskini Kata Laluan</Button>
+                                    <Button>Kemaskini Kata Laluan</Button>
                                 </div>
                             </CardContent>
                         </Card>
@@ -353,10 +353,10 @@ const SettingsContent = () => {
                                                 <p className="text-sm text-gray-500">Tamat 12/24</p>
                                             </div>
                                         </div>
-                                        <Button variant="outline" className="text-green-800 hover:bg-green-50">Edit</Button>
+                                        <Button variant="outline">Edit</Button>
                                     </div>
                                 </div>
-                                <Button className="w-full bg-green-800 hover:bg-green-700 text-white">Tambah Kaedah Pembayaran Baru</Button>
+                                <Button className="w-full">Tambah Kaedah Pembayaran Baru</Button>
                             </CardContent>
                         </Card>
 
