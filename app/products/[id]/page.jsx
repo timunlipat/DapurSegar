@@ -177,8 +177,8 @@ const ProductDetailsPage = () => {
                                 {/* Add to Cart Button */}
                                 <Button
                                     onClick={handleAddToCart}
-                                    className="w-full bg-green-800 hover:bg-green-700 text-white h-12"
                                     size="lg"
+                                    className="w-full"
                                 >
                                     <ShoppingCart className="w-5 h-5 mr-2"/>
                                     Add to Cart
