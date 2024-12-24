@@ -1,5 +1,4 @@
 "use client";
-
 import { ShoppingCart } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 import { useCart } from '@/app/context/CartContext';

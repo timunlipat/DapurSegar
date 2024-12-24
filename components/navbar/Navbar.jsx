@@ -95,9 +95,9 @@ const Navbar = () => {
                         <div className="flex items-center justify-between">
                             {/* Left Section - Logo and Categories */}
                             <div className="flex items-center space-x-8">
-                                <div className="flex items-center space-x-4">
+                                <div className="flex items-center space-x-4 lg:space-x-0">
                                     <button className="lg:hidden" onClick={() => setIsMobileMenuOpen(true)}>
-                                        <Menu size={24} />
+                                        <Menu size={24}/>
                                     </button>
                                     <Link href="/" className="text-xl font-bold">PasarMan</Link>
                                 </div>
