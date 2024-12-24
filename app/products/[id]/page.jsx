@@ -61,17 +61,17 @@ const ProductDetailsPage = () => {
     };
 
     return (
-        <main>
-            <MainLayout>
-                <Container className="py-8">
+        <MainLayout>
+            <Container className="py-8">
+                <main role="main">
                     {/* Back Button */}
                     <Button
                         variant="ghost"
                         asChild
-                        className="text-green-800 hover:text-green-700 hover:bg-green-50 mb-1"
+                        className="text-green-800 hover:text-green-700 hover:bg-green-50 mb-6 mt-[-8]"
                     >
                         <Link href="/products" className="inline-flex items-center">
-                            <ChevronLeft className="w-5 h-5 mr-1" />
+                            <ChevronLeft className="w-5 h-5 mr-1"/>
                             Back to Products
                         </Link>
                     </Button>
@@ -87,8 +87,8 @@ const ProductDetailsPage = () => {
                                 />
                                 {product.discount && (
                                     <span className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1.5 rounded-lg font-medium">
-                                        {product.discount}
-                                     </span>
+                                    {product.discount}
+                                 </span>
                                 )}
                             </div>
 
@@ -115,23 +115,23 @@ const ProductDetailsPage = () => {
                                             ))}
                                         </div>
                                         <span className="text-gray-600">
-                                            {product.reviews} reviews
-                                        </span>
+                                        {product.reviews} reviews
+                                    </span>
                                     </div>
                                 </div>
 
                                 <div className="border-t border-b py-6">
                                     <div className="flex items-baseline space-x-2">
-                                        <span className="text-3xl font-bold text-green-800">
-                                            RM{product.price.toFixed(2)}
-                                        </span>
+                                    <span className="text-3xl font-bold text-green-800">
+                                        RM{product.price.toFixed(2)}
+                                    </span>
                                         <span className="text-gray-600">/ {product.unit}</span>
                                     </div>
                                     {product.discount && (
                                         <div className="mt-2">
-                                            <span className="text-red-500 font-medium">
-                                                Save {product.discount}
-                                            </span>
+                                        <span className="text-red-500 font-medium">
+                                            Save {product.discount}
+                                        </span>
                                         </div>
                                     )}
                                 </div>
@@ -158,18 +158,18 @@ const ProductDetailsPage = () => {
                                             onClick={() => handleQuantityChange(-1)}
                                             className="h-10 rounded-l-lg border-r"
                                         >
-                                            <Minus className="w-4 h-4" />
+                                            <Minus className="w-4 h-4"/>
                                         </Button>
                                         <span className="w-12 text-center font-medium">
-                                            {quantity}
-                                        </span>
+                                        {quantity}
+                                    </span>
                                         <Button
                                             variant="ghost"
                                             size="icon"
                                             onClick={() => handleQuantityChange(1)}
                                             className="h-10 rounded-r-lg border-l"
                                         >
-                                            <Plus className="w-4 h-4" />
+                                            <Plus className="w-4 h-4"/>
                                         </Button>
                                     </div>
                                 </div>
@@ -180,7 +180,7 @@ const ProductDetailsPage = () => {
                                     className="w-full bg-green-800 hover:bg-green-700 text-white h-12"
                                     size="lg"
                                 >
-                                    <ShoppingCart className="w-5 h-5 mr-2" />
+                                    <ShoppingCart className="w-5 h-5 mr-2"/>
                                     Add to Cart
                                 </Button>
 
@@ -221,9 +221,9 @@ const ProductDetailsPage = () => {
                         shipping={shipping}
                         total={total}
                     />
-                </Container>
-            </MainLayout>
-        </main>
+                </main>
+            </Container>
+        </MainLayout>
     );
 };
 
