@@ -15,22 +15,36 @@ import { getPlaceholderImage } from '@/utils/images';
 const ProductDetailsPage = () => {
     const [product, setProduct] = useState(null);
     const [quantity, setQuantity] = useState(1);
-    const [isCartModalOpen, setIsCartModalOpen] = useState(false);
     const {
         addToCart,
         cartItems,
         updateQuantity,
         removeItem,
         getCartTotal,
+        isCartOpen,
+        setIsCartOpen
     } = useCart();
     const { subtotal, shipping, total } = getCartTotal();
     const params = useParams();
 
+    // Initialize product and check if it's already in cart
     useEffect(() => {
         const productId = params.id;
         const foundProduct = featuredProducts.find(p => p.id.toString() === productId);
-        setProduct(foundProduct || null);
-    }, [params.id]);
+
+        if (foundProduct) {
+            setProduct(foundProduct);
+            // Check if product is already in cart and set initial quantity
+            const cartItem = cartItems.find(item => item.id === foundProduct.id);
+            if (cartItem) {
+                setQuantity(cartItem.quantity);
+            } else {
+                setQuantity(1);
+            }
+        } else {
+            setProduct(null);
+        }
+    }, [params.id, cartItems]);
 
     if (!product) {
         return (
@@ -41,30 +55,29 @@ const ProductDetailsPage = () => {
     }
 
     const handleQuantityChange = (delta) => {
-        setQuantity(prev => Math.max(1, prev + delta));
+        setQuantity(prev => {
+            const newQuantity = Math.max(1, prev + delta);
+            const cartItem = cartItems.find(item => item.id === product.id);
+            if (cartItem) {
+                updateQuantity(product.id, newQuantity);
+            }
+            return newQuantity;
+        });
     };
 
     const handleAddToCart = () => {
         if (product) {
-            console.log('Adding to cart:', { ...product, quantity });
             addToCart({
                 ...product,
                 quantity
             });
-            console.log('Cart after adding:', cartItems);
-            setIsCartModalOpen(true);
         }
-    };
-
-    const closeCartModal = () => {
-        setIsCartModalOpen(false);
     };
 
     return (
         <MainLayout>
             <Container className="py-8">
                 <main role="main">
-                    {/* Back Button */}
                     <Button
                         variant="ghost"
                         asChild
@@ -87,11 +100,10 @@ const ProductDetailsPage = () => {
                                 />
                                 {product.discount && (
                                     <span className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1.5 rounded-lg font-medium">
-                                    {product.discount}
-                                 </span>
+                                        {product.discount}
+                                    </span>
                                 )}
                             </div>
-
                         </div>
 
                         {/* Product Info Section */}
@@ -115,23 +127,23 @@ const ProductDetailsPage = () => {
                                             ))}
                                         </div>
                                         <span className="text-gray-600">
-                                        {product.reviews} reviews
-                                    </span>
+                                            {product.reviews} reviews
+                                        </span>
                                     </div>
                                 </div>
 
                                 <div className="border-t border-b py-6">
                                     <div className="flex items-baseline space-x-2">
-                                    <span className="text-3xl font-bold text-green-800">
-                                        RM{product.price.toFixed(2)}
-                                    </span>
+                                        <span className="text-3xl font-bold text-green-800">
+                                            RM{product.price.toFixed(2)}
+                                        </span>
                                         <span className="text-gray-600">/ {product.unit}</span>
                                     </div>
                                     {product.discount && (
                                         <div className="mt-2">
-                                        <span className="text-red-500 font-medium">
-                                            Save {product.discount}
-                                        </span>
+                                            <span className="text-red-500 font-medium">
+                                                Save {product.discount}
+                                            </span>
                                         </div>
                                     )}
                                 </div>
@@ -148,7 +160,6 @@ const ProductDetailsPage = () => {
 
                             {/* Quantity and Add to Cart section */}
                             <div className="mt-auto space-y-4">
-                                {/* Quantity Selector */}
                                 <div className="flex items-center space-x-4">
                                     <span className="text-gray-700 font-medium">Quantity:</span>
                                     <div className="flex items-center rounded-lg border">
@@ -161,8 +172,8 @@ const ProductDetailsPage = () => {
                                             <Minus className="w-4 h-4"/>
                                         </Button>
                                         <span className="w-12 text-center font-medium">
-                                        {quantity}
-                                    </span>
+                                            {quantity}
+                                        </span>
                                         <Button
                                             variant="ghost"
                                             size="icon"
@@ -174,7 +185,6 @@ const ProductDetailsPage = () => {
                                     </div>
                                 </div>
 
-                                {/* Add to Cart Button */}
                                 <Button
                                     onClick={handleAddToCart}
                                     size="lg"
@@ -184,7 +194,6 @@ const ProductDetailsPage = () => {
                                     Add to Cart
                                 </Button>
 
-                                {/* Additional Product Info Cards */}
                                 <div className="grid grid-cols-2 gap-4 mt-6">
                                     <Card>
                                         <CardContent className="p-4">
@@ -210,10 +219,10 @@ const ProductDetailsPage = () => {
                             </div>
                         </div>
                     </div>
-                    {/* CartModal */}
+
                     <CartModal
-                        isOpen={isCartModalOpen}
-                        onClose={closeCartModal}
+                        isOpen={isCartOpen}
+                        onClose={() => setIsCartOpen(false)}
                         cartItems={cartItems}
                         updateQuantity={updateQuantity}
                         removeItem={removeItem}

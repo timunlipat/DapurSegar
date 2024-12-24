@@ -1,5 +1,4 @@
 "use client";
-
 import { createContext, useContext, useState, useEffect } from 'react';
 
 const CartContext = createContext();
@@ -14,11 +13,8 @@ export const CartProvider = ({ children }) => {
             const savedCart = localStorage.getItem('cart');
             if (savedCart) {
                 const parsedCart = JSON.parse(savedCart);
-                // Validate that parsedCart is an array
                 if (Array.isArray(parsedCart)) {
                     setCartItems(parsedCart);
-                } else {
-                    setCartItems([]);
                 }
             }
         } catch (error) {
@@ -42,34 +38,27 @@ export const CartProvider = ({ children }) => {
             return;
         }
 
-        setCartItems(prev => {
-            // Log the current state for debugging
-            console.log('Current cart state:', prev);
-            console.log('Adding product:', product);
-
-            // Find if the product already exists in the cart
-            const existingItemIndex = prev.findIndex(item => item.id === product.id);
-            console.log('Existing item index:', existingItemIndex);
+        setCartItems(prevItems => {
+            const existingItemIndex = prevItems.findIndex(item => item.id === product.id);
 
             if (existingItemIndex !== -1) {
-                // Create a new array with the updated item
-                const newCart = [...prev];
-                newCart[existingItemIndex] = {
-                    ...newCart[existingItemIndex],
-                    quantity: (newCart[existingItemIndex].quantity || 0) + 1
+                // Update existing item
+                const updatedItems = [...prevItems];
+                updatedItems[existingItemIndex] = {
+                    ...updatedItems[existingItemIndex],
+                    quantity: product.quantity
                 };
-                console.log('Updated cart:', newCart);
-                return newCart;
+                return updatedItems;
+            } else {
+                // Add new item
+                return [...prevItems, { ...product }];
             }
-
-            // Add new item to cart
-            const newCart = [...prev, { ...product, quantity: 1 }];
-            console.log('New cart with added item:', newCart);
-            return newCart;
         });
 
-        // Open the cart when adding an item
-        setIsCartOpen(true);
+        // Delay opening the cart slightly
+        setTimeout(() => {
+            setIsCartOpen(true);
+        }, 100);
     };
 
     const updateQuantity = (id, newQuantity) => {
