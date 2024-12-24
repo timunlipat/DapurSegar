@@ -76,7 +76,7 @@ const ProductDetailsPage = () => {
 
     return (
         <MainLayout>
-            <Container className="py-8">
+            <Container className="py-8 pb-16">
                 <main role="main">
                     <Button
                         variant="ghost"

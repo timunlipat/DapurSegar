@@ -113,7 +113,8 @@ const MobileNav = () => {
                         <Search size={24} />
                         <span className="text-xs mt-1">Cari</span>
                     </button>
-                    <Link href="/orders" className="flex flex-col items-center text-gray-500">
+                    {/*TODO: Add Cart*/}
+                    <Link href="#" className="flex flex-col items-center text-gray-500">
                         <Package size={24} />
                         <span className="text-xs mt-1">Pesanan</span>
                     </Link>
