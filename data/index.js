@@ -1,6 +1,5 @@
 export const categories = [
-    "Sayur-sayuran", "Tenusu & Telur", "Daging & Makanan Laut",
-    "Bakeri", "Barangan Runcit", "Makanan Sejuk Beku", "Minuman", "Snek"
+    "Sayur-sayuran", "Tenusu & Telur", "Daging & Makanan Laut", "Barangan Runcit", "Bakeri", "Makanan Sejuk Beku", "Minuman", "Snek"
 ];
 
 export const featuredProducts = [
