@@ -35,7 +35,7 @@ const SettingsContent = () => {
 
     return (
         <main className="py-6">
-            <Container>
+            <Container className="max-w-[1000px]">
                 {/* Header */}
                 <div className="space-y-2 mb-8">
                     <h1 className="text-2xl lg:text-3xl font-bold text-gray-900">Tetapan</h1>
@@ -106,7 +106,7 @@ const SettingsContent = () => {
                                                 <p className="text-sm text-gray-500">123 Jalan Sultan Ismail, Kuala Lumpur</p>
                                             </div>
                                         </div>
-                                        <Button variant="outline" className="text-green-800 hover:bg-green-50">Sunting</Button>
+                                        <Button variant="outline" className="text-green-800 hover:bg-green-50">Ubah Alamat</Button>
                                     </div>
                                 </div>
                                 <Button className="w-full bg-green-800 hover:bg-green-700 text-white">Tambah Alamat Baru</Button>
@@ -278,7 +278,7 @@ const SettingsContent = () => {
                                     <Bell className="h-5 w-5 text-green-800"/>
                                     <CardTitle>Tetapan Pemberitahuan</CardTitle>
                                 </div>
-                                <CardDescription>Pilih cara anda ingin diberitahu</CardDescription>
+                                <CardDescription>Pilih cara anda ingin dinotifikasi</CardDescription>
                             </CardHeader>
                             <CardContent className="space-y-6">
                                 <div className="space-y-6">
@@ -353,7 +353,7 @@ const SettingsContent = () => {
                                                 <p className="text-sm text-gray-500">Tamat 12/24</p>
                                             </div>
                                         </div>
-                                        <Button variant="outline" className="text-green-800 hover:bg-green-50">Sunting</Button>
+                                        <Button variant="outline" className="text-green-800 hover:bg-green-50">Edit</Button>
                                     </div>
                                 </div>
                                 <Button className="w-full bg-green-800 hover:bg-green-700 text-white">Tambah Kaedah Pembayaran Baru</Button>

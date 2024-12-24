@@ -103,7 +103,7 @@ const Navbar = () => {
 
                                 {/* Desktop Categories */}
                                 <nav className="hidden lg:flex space-x-6">
-                                    {categories.slice(0, 4).map((category) => (
+                                    {categories.slice(0, 3).map((category) => (
                                         <div key={category} className="relative group">
                                             <button className="flex items-center space-x-1 py-2 text-green-100 hover:text-white">
                                                 <span>{category}</span>
