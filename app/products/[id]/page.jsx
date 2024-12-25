@@ -102,14 +102,20 @@ const ProductDetailsPage = () => {
                             <div className="flex items-center space-x-4">
                                 <div className="flex items-center">
                                     {[...Array(5)].map((_, index) => (
-                                        <Star
-                                            key={index}
-                                            className={`w-5 h-5 ${
-                                                index < Math.floor(product.rating)
-                                                    ? 'text-yellow-400 fill-current'
-                                                    : 'text-gray-300'
-                                            }`}
-                                        />
+                                        <div key={index} className="relative w-5 h-5">
+                                            {/* Background star (gray) */}
+                                            <Star className="absolute w-5 h-5 text-gray-300"/>
+
+                                            {/* Foreground star (yellow) with width based on rating */}
+                                            <div
+                                                className="absolute overflow-hidden"
+                                                style={{
+                                                    width: `${Math.max(0, Math.min(100, (product.rating - index) * 100))}%`
+                                                }}
+                                            >
+                                                <Star className="w-5 h-5 text-yellow-400 fill-current"/>
+                                            </div>
+                                        </div>
                                     ))}
                                 </div>
                                 <span className="text-gray-600">

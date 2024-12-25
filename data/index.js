@@ -8,7 +8,7 @@ export const featuredProducts = [
         name: "Nasi Lemak Bungkus",
         price: 2.50,
         unit: "per pack",
-        rating: 4.6,
+        rating: 4.2,
         reviews: 289,
         image: "",
         description: "Hidangan Malaysia yang iconic. Nasi lemak sedia dibungkus dengan sambal, kacang, ikan bilis, dan telur - sempurna untuk sarapan."
@@ -19,7 +19,7 @@ export const featuredProducts = [
         price: 3.90,
         unit: "per pack",
         discount: "Beli 1 Percuma 1",
-        rating: 4.2,
+        rating: 3.8,
         reviews: 89,
         image: "",
         description: "Roti lembut keluaran jenama Malaysia yang terkenal. Sesuai untuk sarapan, bekal sekolah, atau dijadikan roti canai."
@@ -29,7 +29,7 @@ export const featuredProducts = [
         name: "Santan Kara",
         price: 4.50,
         unit: "200ml",
-        rating: 4.5,
+        rating: 4.1,
         reviews: 145,
         image: "",
         description: "Santan berkualiti untuk menambah kelazatan pelbagai masakan tradisional seperti rendang, gulai, dan kari."
@@ -39,7 +39,7 @@ export const featuredProducts = [
         name: "Kelapa Parut Segar",
         price: 4.50,
         unit: "200g",
-        rating: 4.3,
+        rating: 3.5,
         reviews: 89,
         image: "",
         description: "Kelapa parut segar untuk pelbagai masakan tradisional seperti kuih, rendang, dan masakan berkuah."
@@ -49,7 +49,7 @@ export const featuredProducts = [
         name: "Pisang Berangan",
         price: 6.90,
         unit: "per sisir",
-        rating: 4.3,
+        rating: 3.9,
         reviews: 98,
         image: "",
         description: "Pisang berangan segar, manis, dan lembut. Ideal untuk dimakan terus atau dijadikan pelbagai hidangan pencuci mulut."
@@ -59,7 +59,7 @@ export const featuredProducts = [
         name: "Kicap Jalen",
         price: 7.90,
         unit: "750ml",
-        rating: 4.4,
+        rating: 4.7,
         reviews: 167,
         image: "",
         description: "Kicap tradisional untuk menambah perisa pada pelbagai masakan. Sempurna untuk nasi goreng, cecah, dan hidangan tradisional."
@@ -69,7 +69,7 @@ export const featuredProducts = [
         name: "Teh Boh",
         price: 8.90,
         unit: "100 bags",
-        rating: 4.5,
+        rating: 4.3,
         reviews: 234,
         image: "",
         description: "Teh Cameron Highlands yang terkenal. Berkualiti tinggi dengan citarasa yang kental dan menyegarkan."
@@ -79,7 +79,7 @@ export const featuredProducts = [
         name: "Sambal Belacan",
         price: 8.90,
         unit: "200g",
-        rating: 4.7,
+        rating: 3.6,
         reviews: 234,
         image: "",
         description: "Sambal belacan autentik untuk menambah pedas dan perisa pada pelbagai hidangan Malaysia."
@@ -89,7 +89,7 @@ export const featuredProducts = [
         name: "Ayam Segar",
         price: 9.90,
         unit: "per kg",
-        rating: 4.4,
+        rating: 4.0,
         reviews: 198,
         image: "",
         description: "Ayam segar berkualiti tinggi, sempurna untuk pelbagai masakan Malaysia seperti rendang, ayam goreng, dan kari ayam."
@@ -99,7 +99,7 @@ export const featuredProducts = [
         name: "Buah Rambai",
         price: 9.90,
         unit: "per kg",
-        rating: 4.2,
+        rating: 3.2,
         reviews: 67,
         image: "",
         description: "Buah tropika yang jarang dijumpai, mempunyai rasa masam manis yang unik. Baik untuk dijadikan ulam atau pencuci mulut."
@@ -110,7 +110,7 @@ export const featuredProducts = [
         price: 12.90,
         unit: "per kg",
         discount: "Buy 2 Free 1",
-        rating: 4.3,
+        rating: 4.5,
         reviews: 76,
         image: "",
         description: "Buah tropika Malaysia yang manis dan segar. Kaya dengan vitamin C dan ideal untuk dijadikan pencuci mulut atau dimakan terus."
@@ -120,7 +120,7 @@ export const featuredProducts = [
         name: "Telur Gred A",
         price: 13.90,
         unit: "30 biji",
-        rating: 4.6,
+        rating: 4.2,
         reviews: 167,
         image: "",
         description: "Telur segar berkualiti gred A, ideal untuk masakan tradisional Malaysia seperti telur goreng, telur separuh masak, dan pelbagai hidangan."
@@ -131,7 +131,7 @@ export const featuredProducts = [
         price: 13.90,
         unit: "5 packs",
         discount: "30% OFF",
-        rating: 4.8,
+        rating: 4.9,
         reviews: 423,
         image: "",
         description: "Mi segera perisa kari yang popular di Malaysia. Mudah disediakan dan menjadi pilihan favourite untuk hidangan segera."
@@ -142,7 +142,7 @@ export const featuredProducts = [
         price: 15.90,
         unit: "per kg",
         discount: "15% OFF",
-        rating: 4.4,
+        rating: 3.7,
         reviews: 178,
         image: "",
         description: "Ikan kembung segar untuk masakan tradisional. Sesuai untuk dimasak singgang, sambal, atau digoreng."
@@ -153,7 +153,7 @@ export const featuredProducts = [
         price: 19.90,
         unit: "1.5kg",
         discount: "RM3 OFF",
-        rating: 4.7,
+        rating: 4.8,
         reviews: 342,
         image: "",
         description: "Minuman coklat kegemaran rakyat Malaysia. Sesuai untuk diminum panas atau sejuk, sempurna pada waktu pagi atau petang."
@@ -164,7 +164,7 @@ export const featuredProducts = [
         price: 39.90,
         unit: "per kg",
         discount: "20% OFF",
-        rating: 4.5,
+        rating: 3.4,
         reviews: 128,
         image: "",
         description: "Rajai durian Malaysia! Musang King yang kaya rasa, bertekstur kremosi, dan mempunyai aroma yang memukau. Sesuai untuk penggemar durian tulen."
@@ -175,7 +175,7 @@ export const featuredProducts = [
         price: 35.90,
         unit: "500g",
         discount: "Raya Promo",
-        rating: 4.8,
+        rating: 4.6,
         reviews: 312,
         image: "",
         description: "Rendang daging masakan tradisional yang kaya rempah dan berlaipur. Hidangan istimewa untuk majlis khusus."
@@ -185,7 +185,7 @@ export const featuredProducts = [
         name: "Beras Super Special",
         price: 28.90,
         unit: "5kg",
-        rating: 4.8,
+        rating: 4.4,
         reviews: 256,
         image: "",
         description: "Beras berkualiti tinggi untuk setiap hidangan keluarga. Gebu, putih, dan sempurna untuk nasi lemak, nasik goreng, dan pelbagai hidangan tradisional."
@@ -196,7 +196,7 @@ export const featuredProducts = [
         price: 25.90,
         unit: "500g",
         discount: "Raya Special",
-        rating: 4.7,
+        rating: 3.3,
         reviews: 156,
         image: "",
         description: "Koleksi kuih raya pelbagai jenis untuk majlis perayaan. Termasuk biskut tradisional yang lazat dan menggembirakan."
@@ -206,7 +206,7 @@ export const featuredProducts = [
         name: "Kopi Tongkat Ali",
         price: 23.90,
         unit: "500g",
-        rating: 4.6,
+        rating: 3.1,
         reviews: 145,
         image: "",
         description: "Minuman kopi tradisional dengan ekstrak tongkat ali. Dipercayai dapat memberikan tenaga dan kesihatan."
