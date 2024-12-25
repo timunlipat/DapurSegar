@@ -87,7 +87,7 @@ const ProductDetailsPage = () => {
                 </Link>
             </Button>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 lg:min-h-[600px]">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 lg:min-h-[600px] mb-8">
                 {/* Product Image Section */}
                 <div className="flex items-stretch">
                     <div className="w-full relative bg-gray-100 rounded-xl overflow-hidden min-h-[300px] md:min-h-[400px]">
