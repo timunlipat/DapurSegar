@@ -26,7 +26,7 @@ const ProductCard = ({
             name,
             price,
             unit,
-            image: imageUrl
+            image: imageUrl,
         });
     };
 
