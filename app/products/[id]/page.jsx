@@ -34,17 +34,11 @@ const ProductDetailsPage = () => {
 
         if (foundProduct) {
             setProduct(foundProduct);
-            // Check if product is already in cart and set initial quantity
-            const cartItem = cartItems.find(item => item.id === foundProduct.id);
-            if (cartItem) {
-                setQuantity(cartItem.quantity);
-            } else {
-                setQuantity(1);
-            }
+            setQuantity(1); // Always start with quantity 1 when product changes
         } else {
             setProduct(null);
         }
-    }, [params.id, cartItems]);
+    }, [params.id]);
 
     if (!product) {
         return (
@@ -55,14 +49,7 @@ const ProductDetailsPage = () => {
     }
 
     const handleQuantityChange = (delta) => {
-        setQuantity(prev => {
-            const newQuantity = Math.max(1, prev + delta);
-            const cartItem = cartItems.find(item => item.id === product.id);
-            if (cartItem) {
-                updateQuantity(product.id, newQuantity);
-            }
-            return newQuantity;
-        });
+        setQuantity(prev => Math.max(1, prev + delta));
     };
 
     const handleAddToCart = () => {
@@ -71,6 +58,7 @@ const ProductDetailsPage = () => {
                 ...product,
                 quantity
             });
+            setQuantity(1);
         }
     };
 
