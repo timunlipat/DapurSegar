@@ -47,43 +47,29 @@ const ProductCard = ({
         addToCart(item, false);
 
         toast({
-            variant: "success",
-            title: (
-                <div className="flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-full bg-green-600" />
-                    <span>Added to Cart</span>
-                </div>
-            ),
+            variant: "default",
             description: (
-                <div className="flex flex-col gap-3 pt-2">
-                    <div className="flex items-start gap-3">
-                        <div className="relative h-16 w-16 overflow-hidden rounded-lg border border-gray-100">
-                            <img
-                                src={imageUrl}
-                                alt={name}
-                                className="h-full w-full object-cover"
-                            />
-                        </div>
-                        <div className="flex-1">
-                            <p className="font-medium text-gray-900">{name}</p>
-                            <div className="mt-1 flex items-center gap-2">
-                        <span className="text-sm font-medium text-gray-900">
-                            RM {price.toFixed(2)}
-                        </span>
-                                <span className="text-xs text-gray-500">·</span>
-                                <span className="text-xs text-gray-500">{unit}</span>
-                            </div>
+                <div className="flex items-start gap-3">
+                    <div className="relative h-10 w-10 flex-shrink-0 overflow-hidden rounded">
+                        <img
+                            src={imageUrl}
+                            alt={name}
+                            className="h-full w-full object-cover"
+                        />
+                    </div>
+                    <div className="flex flex-1 flex-col">
+                        <p className="font-medium text-gray-900">{name}</p>
+                        <div className="flex items-baseline gap-1">
+                            <span className="text-sm text-gray-600">RM {price.toFixed(2)}</span>
+                            <span className="text-xs text-gray-500">{unit}</span>
                         </div>
                     </div>
-                    <div className="flex items-center justify-between border-t border-gray-100 pt-3">
-                        <p className="text-xs text-gray-500">Press undo to remove item</p>
-                        <button
-                            onClick={() => removeFromCart(id)}
-                            className="text-sm font-medium text-green-600 hover:text-green-700 transition-colors"
-                        >
-                            Undo
-                        </button>
-                    </div>
+                    <button
+                        onClick={() => removeFromCart(id)}
+                        className="text-sm text-green-600 hover:text-green-700"
+                    >
+                        Undo
+                    </button>
                 </div>
             ),
             duration: 3000,
