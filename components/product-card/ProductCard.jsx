@@ -47,26 +47,43 @@ const ProductCard = ({
         addToCart(item, false);
 
         toast({
-            title: "Added to Cart",
+            variant: "success",
+            title: (
+                <div className="flex items-center gap-2">
+                    <div className="h-2 w-2 rounded-full bg-green-600" />
+                    <span>Added to Cart</span>
+                </div>
+            ),
             description: (
-                <div className="flex flex-col gap-2">
-                    <div className="flex items-start gap-2">
-                        <img
-                            src={imageUrl}
-                            alt={name}
-                            className="w-12 h-12 rounded object-cover"
-                        />
+                <div className="flex flex-col gap-3 pt-2">
+                    <div className="flex items-start gap-3">
+                        <div className="relative h-16 w-16 overflow-hidden rounded-lg border border-gray-100">
+                            <img
+                                src={imageUrl}
+                                alt={name}
+                                className="h-full w-full object-cover"
+                            />
+                        </div>
                         <div className="flex-1">
-                            <p className="font-medium">{name}</p>
-                            <p className="text-sm text-gray-500">RM {price.toFixed(2)}</p>
+                            <p className="font-medium text-gray-900">{name}</p>
+                            <div className="mt-1 flex items-center gap-2">
+                        <span className="text-sm font-medium text-gray-900">
+                            RM {price.toFixed(2)}
+                        </span>
+                                <span className="text-xs text-gray-500">·</span>
+                                <span className="text-xs text-gray-500">{unit}</span>
+                            </div>
                         </div>
                     </div>
-                    <button
-                        onClick={() => removeFromCart(id)}
-                        className="text-sm text-gray-500 hover:text-gray-700 underline self-end"
-                    >
-                        Undo
-                    </button>
+                    <div className="flex items-center justify-between border-t border-gray-100 pt-3">
+                        <p className="text-xs text-gray-500">Press undo to remove item</p>
+                        <button
+                            onClick={() => removeFromCart(id)}
+                            className="text-sm font-medium text-green-600 hover:text-green-700 transition-colors"
+                        >
+                            Undo
+                        </button>
+                    </div>
                 </div>
             ),
             duration: 3000,
