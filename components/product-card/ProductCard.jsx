@@ -44,7 +44,7 @@ const ProductCard = ({
             quantity: 1
         };
 
-        addToCart(item);
+        addToCart(item, false);
 
         toast({
             title: "Added to Cart",

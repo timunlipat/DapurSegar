@@ -32,7 +32,7 @@ export const CartProvider = ({ children }) => {
         }
     }, [cartItems]);
 
-    const addToCart = (product) => {
+    const addToCart = (product, openCart = true) => {
         if (!product || !product.id) {
             console.error('Invalid product:', product);
             return;
@@ -40,10 +40,9 @@ export const CartProvider = ({ children }) => {
 
         setCartItems(prevItems => {
             const existingItemIndex = prevItems.findIndex(item => item.id === product.id);
-            const quantity = product.quantity || 1; // Default to 1 if quantity not provided
+            const quantity = product.quantity || 1;
 
             if (existingItemIndex !== -1) {
-                // Update existing item by adding the quantities
                 const updatedItems = [...prevItems];
                 updatedItems[existingItemIndex] = {
                     ...updatedItems[existingItemIndex],
@@ -51,15 +50,16 @@ export const CartProvider = ({ children }) => {
                 };
                 return updatedItems;
             } else {
-                // Add new item with the specified quantity or default of 1
                 return [...prevItems, { ...product, quantity }];
             }
         });
 
-        // Delay opening the cart slightly
-        setTimeout(() => {
-            setIsCartOpen(true);
-        }, 100);
+        // Only open cart if openCart is true
+        if (openCart) {
+            setTimeout(() => {
+                setIsCartOpen(true);
+            }, 100);
+        }
     };
 
     const updateQuantity = (id, newQuantity) => {
