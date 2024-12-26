@@ -5,7 +5,7 @@ export const categories = [
 export const featuredProducts = [
     {
         id: 1,
-        name: "Nasi Lemak Bungkus",
+        name: "Nasi Lemak 99 Speedmart",
         price: 2.50,
         unit: "per pack",
         discount: "Beli 3 Jimat 20%",
