@@ -37,7 +37,7 @@ const HeroSection = ({
             {/* Main Hero Carousel */}
             <div className="relative rounded-xl overflow-hidden mb-6 h-48 sm:h-96 lg:col-span-8 lg:mb-0">
                 <div className="absolute inset-0 flex transition-transform duration-500 ease-in-out"
-                     style={{ transform: `translateX(-${currentSlide * 100}%)`,  }}>
+                     style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
                     {carouselData.map((slide, index) => (
                         <div
                             key={index}
@@ -52,7 +52,7 @@ const HeroSection = ({
                                 />
                             )}
                             <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent" />
-                            <div className="relative z-10 h-full flex flex-col justify-center px-20">
+                            <div className="relative z-10 h-full flex flex-col justify-center px-6">
                                 <h2 className="text-xl sm:text-4xl font-bold text-white mb-2">
                                     {slide.title}
                                 </h2>
@@ -79,11 +79,11 @@ const HeroSection = ({
                 {carouselData.length > 1 && (
                     <>
                         {/* Carousel Controls */}
-                        <div className="absolute top-1/2 transform -translate-y-1/2 flex justify-between w-full z-10">
+                        <div className="absolute bottom-4 right-4 flex gap-2 z-20">
                             <Button
                                 variant="secondary"
                                 size="icon"
-                                className="absolute left-4 w-8 h-8 rounded-full bg-white/20 hover:bg-white/40"
+                                className="w-8 h-8 rounded-full bg-white/20 hover:bg-white/40"
                                 onClick={prevSlide}
                             >
                                 <ChevronLeft className="h-4 w-4" />
@@ -91,7 +91,7 @@ const HeroSection = ({
                             <Button
                                 variant="secondary"
                                 size="icon"
-                                className="absolute right-4 w-8 h-8 rounded-full bg-white/20 hover:bg-white/40"
+                                className="w-8 h-8 rounded-full bg-white/20 hover:bg-white/40"
                                 onClick={nextSlide}
                             >
                                 <ChevronRight className="h-4 w-4" />
@@ -99,9 +99,7 @@ const HeroSection = ({
                         </div>
 
                         {/* Carousel Indicators */}
-                        <div
-                            className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10"
-                        >
+                        <div className="absolute bottom-4 left-4 flex gap-2 z-20">
                             {carouselData.map((_, index) => (
                                 <button
                                     key={index}
@@ -117,10 +115,8 @@ const HeroSection = ({
                                 />
                             ))}
                         </div>
-
                     </>
                 )}
-
             </div>
 
             {/* Secondary Promotional Banners - Desktop Only */}
@@ -129,7 +125,7 @@ const HeroSection = ({
                     <div
                         key={index}
                         className="relative rounded-xl overflow-hidden flex-1"
-                        style={{backgroundColor: banner.backgroundColor}}
+                        style={{ backgroundColor: banner.backgroundColor }}
                     >
                         <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent"/>
                         <div className="relative z-10 h-full flex flex-col justify-center p-6">
