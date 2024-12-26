@@ -19,7 +19,7 @@ export const featuredProducts = [
         name: "Roti Gardenia",
         price: 3.90,
         unit: "per pack",
-        discount: "Beli 1 Percuma 1",
+        discount: "",
         rating: 3.8,
         reviews: 89,
         image: "",
@@ -106,7 +106,7 @@ export const featuredProducts = [
         name: "Buah Rambai",
         price: 9.90,
         unit: "per kg",
-        discount: "Flash Sale 35%",
+        discount: "",
         rating: 3.2,
         reviews: 67,
         image: "",
@@ -172,7 +172,7 @@ export const featuredProducts = [
         name: "Durian Musang King",
         price: 39.90,
         unit: "per kg",
-        discount: "Early Bird 20%",
+        discount: "",
         rating: 3.4,
         reviews: 128,
         image: "",
@@ -194,7 +194,7 @@ export const featuredProducts = [
         name: "Beras Super Special",
         price: 28.90,
         unit: "5kg",
-        discount: "Bulk Buy -15%",
+        discount: "",
         rating: 4.4,
         reviews: 256,
         image: "",
@@ -213,14 +213,14 @@ export const featuredProducts = [
     },
     {
         id: 20,
-        name: "Kopi Tongkat Ali",
-        price: 23.90,
-        unit: "500g",
-        discount: "2 Tin RM40",
-        rating: 3.1,
-        reviews: 145,
+        name: "Madu Kelulut Asli",
+        price: 25.90,
+        unit: "250g",
+        discount: "2 Botol RM45",
+        rating: 4.3,
+        reviews: 178,
         image: "",
-        description: "Minuman kopi tradisional dengan ekstrak tongkat ali. Dipercayai dapat memberikan tenaga dan kesihatan."
+        description: "Madu kelulut asli dari lebah kelulut liar. Kaya dengan antioksidan dan nutrisi untuk meningkatkan sistem imun badan."
     }
 ];
 
