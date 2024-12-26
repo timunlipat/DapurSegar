@@ -1,6 +1,7 @@
 "use client";
 import { ShoppingCart } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
+import { toast } from "@/hooks/use-toast";
 import {
     Tooltip,
     TooltipContent,
@@ -23,7 +24,7 @@ const ProductCard = ({
                          image,
                          pricePerUnit
                      }) => {
-    const { addToCart } = useCart();
+    const { addToCart, removeFromCart } = useCart();
     const router = useRouter();
     const [isHovered, setIsHovered] = useState(false);
     const [isAdding, setIsAdding] = useState(false);
@@ -33,15 +34,44 @@ const ProductCard = ({
     const handleAddToCart = (e) => {
         e.stopPropagation();
         setIsAdding(true);
-        addToCart({
+
+        const item = {
             id,
             name,
             price,
             unit,
             image: imageUrl,
             quantity: 1
+        };
+
+        addToCart(item);
+
+        toast({
+            title: "Added to Cart",
+            description: (
+                <div className="flex flex-col gap-2">
+                    <div className="flex items-start gap-2">
+                        <img
+                            src={imageUrl}
+                            alt={name}
+                            className="w-12 h-12 rounded object-cover"
+                        />
+                        <div className="flex-1">
+                            <p className="font-medium">{name}</p>
+                            <p className="text-sm text-gray-500">RM {price.toFixed(2)}</p>
+                        </div>
+                    </div>
+                    <button
+                        onClick={() => removeFromCart(id)}
+                        className="text-sm text-gray-500 hover:text-gray-700 underline self-end"
+                    >
+                        Undo
+                    </button>
+                </div>
+            ),
+            duration: 3000,
         });
-        // Reset animation after 500ms
+
         setTimeout(() => setIsAdding(false), 500);
     };
 

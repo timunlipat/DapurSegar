@@ -1,5 +1,4 @@
 "use client";
-
 import { X } from 'lucide-react';
 import {
     Dialog,
@@ -22,8 +21,6 @@ const CartModal = ({
                        total
                    }) => {
     const totalQuantity = cartItems.reduce((sum, item) => sum + (item.quantity || 0), 0);
-
-    // Debug logging
     console.log('Cart Items:', cartItems);
     console.log('Total Items:', totalQuantity);
     return (

@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import CartProviderWrapper from "@/app/context/CartProviderWrapper";
 import MainLayout from '@/components/layout/MainLayout';
+import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
                     <MainLayout>
                         {children}
                     </MainLayout>
+                    <Toaster />
                 </CartProviderWrapper>
             </body>
         </html>
