@@ -5,46 +5,15 @@ import ProductCard from '@/components/product-card/ProductCard';
 import Container from '@/components/Container';
 import { ChevronRight } from 'lucide-react';
 import DealCard from '@/components/DealCard';
+import HeroSection from '@/components/home/HeroSection';
+import { carouselData, secondaryBannersData} from '@/data'
 
 const HomePage = () => {
     return (
         <main className="py-6">
             <Container>
-                {/* Desktop Layout - Two Column Hero Section */}
-                <div className="lg:grid lg:grid-cols-12 lg:gap-6 mb-6">
-                    {/* Main Hero Banner */}
-                    <div className="relative rounded-xl overflow-hidden mb-6 h-48 sm:h-96 bg-green-700 lg:col-span-8 lg:mb-0">
-                        <div className="absolute inset-0 bg-gradient-to-r from-green-800 to-transparent" />
-                        <div className="relative z-10 h-full flex flex-col justify-center px-6">
-                            <h2 className="text-xl sm:text-4xl font-bold text-white mb-2">Segar & Organik</h2>
-                            <p className="text-sm sm:text-xl text-white mb-4">Dapatkan barangan runcit segar dihantar ke pintu rumah anda</p>
-                            <Button
-                                className="bg-white text-green-800 hover:bg-green-50 w-fit"
-                                size="lg"
-                            >
-                                Beli Sekarang
-                            </Button>
-                        </div>
-                    </div>
-
-                    {/* Secondary Promotional Banners - Desktop Only */}
-                    <div className="hidden lg:flex lg:col-span-4 lg:flex-col lg:gap-4 lg:h-full">
-                        <div className="relative rounded-xl overflow-hidden flex-1 bg-blue-600">
-                            <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-transparent"/>
-                            <div className="relative z-10 h-full flex flex-col justify-center p-6">
-                                <h3 className="text-xl font-bold text-white mb-1">Penghantaran Percuma</h3>
-                                <p className="text-sm text-white mb-2">Untuk pesanan melebihi RM50</p>
-                            </div>
-                        </div>
-                        <div className="relative rounded-xl overflow-hidden flex-1 bg-purple-600">
-                            <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-transparent"/>
-                            <div className="relative z-10 h-full flex flex-col justify-center p-6">
-                                <h3 className="text-xl font-bold text-white mb-1">Ahli Baru</h3>
-                                <p className="text-sm text-white mb-2">Nikmati diskaun 15% untuk pembelian pertama</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {/*Hero section*/}
+                <HeroSection carouselData={carouselData} secondaryBanners={secondaryBannersData} autoPlayInterval={3000}/>
 
                 {/* Enhanced Deals Section */}
                 <section className="mb-12">

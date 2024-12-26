@@ -2,6 +2,76 @@ export const categories = [
     "Sayur-sayuran", "Tenusu & Telur", "Daging & Makanan Laut", "Barangan Runcit", "Bakeri", "Makanan Sejuk Beku", "Minuman", "Snek"
 ];
 
+export const carouselData = [
+    {
+        backgroundColor: '#047857',
+        title: 'Segar & Organik',
+        description: 'Dapatkan barangan runcit segar dihantar ke pintu rumah anda',
+        buttonText: 'Beli Sekarang',
+        buttonLink: '/products',
+        image: ''
+    },
+    {
+        backgroundColor: '#b91c1c',
+        title: 'Jualan Musim Perayaan',
+        description: 'Diskaun sehingga 50% untuk barangan terpilih',
+        buttonText: 'Terokai Sekarang',
+        buttonLink: '/sales',
+        image: ''
+    },
+    {
+        backgroundColor: '#4338ca',
+        title: 'Program Kesetiaan',
+        description: 'Sertai program kesetiaan kami untuk lebih banyak ganjaran',
+        image: ''
+    },
+    {
+        backgroundColor: '#915808',
+        title: 'Produk Tempatan',
+        description: 'Sokong produk buatan Malaysia dengan harga istimewa',
+        buttonText: 'Lihat Koleksi',
+        buttonLink: '/local-products',
+        image: ''
+    },
+    {
+        backgroundColor: '#0369a1',
+        title: 'Penghantaran Percuma',
+        description: 'Nikmati penghantaran percuma untuk pembelian melebihi RM100',
+        buttonText: 'Syarat & Terma',
+        buttonLink: '/delivery',
+        image: ''
+    },
+    {
+        backgroundColor: '#7e22ce',
+        title: 'Pakej Keluarga',
+        description: 'Jimat lebih dengan pakej barangan keperluan keluarga',
+        buttonText: 'Jimat Sekarang',
+        buttonLink: '/family-packages',
+        image: ''
+    },
+    {
+        backgroundColor: '#be123c',
+        title: 'Resipi Minggu Ini',
+        description: 'Dapatkan inspirasi masakan dengan resipi eksklusif kami',
+        buttonText: 'Lihat Resipi',
+        buttonLink: '/recipes',
+        image: ''
+    }
+];
+
+export const secondaryBannersData = [
+    {
+        backgroundColor: '#2563eb',
+        title: 'Penghantaran Percuma',
+        description: 'Untuk pesanan melebihi RM50'
+    },
+    {
+        backgroundColor: '#7c3aed',
+        title: 'Ahli Baru',
+        description: 'Nikmati diskaun 15% untuk pembelian pertama'
+    }
+];
+
 export const featuredProducts = [
     {
         id: 1,
