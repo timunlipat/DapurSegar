@@ -1,5 +1,5 @@
 "use client";
-import { ShoppingCart } from 'lucide-react';
+import { ShoppingCart, CheckCircle2 } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 import { toast } from "@/hooks/use-toast";
 import {
@@ -48,28 +48,44 @@ const ProductCard = ({
 
         toast({
             variant: "default",
+            title: (
+                <div className="flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-green-500" />
+                    <span className="font-semibold text-green-600">Added to Cart</span>
+                </div>
+            ),
             description: (
-                <div className="flex items-start gap-3">
-                    <div className="relative h-10 w-10 flex-shrink-0 overflow-hidden rounded">
-                        <img
-                            src={imageUrl}
-                            alt={name}
-                            className="h-full w-full object-cover"
-                        />
-                    </div>
-                    <div className="flex flex-1 flex-col">
-                        <p className="font-medium text-gray-900">{name}</p>
-                        <div className="flex items-baseline gap-1">
-                            <span className="text-sm text-gray-600">RM {price.toFixed(2)}</span>
-                            <span className="text-xs text-gray-500">{unit}</span>
+                <div className="mt-3">
+                    <div className="flex items-start gap-3">
+                        <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-lg">
+                            <img
+                                src={imageUrl}
+                                alt={name}
+                                className="h-full w-full object-cover transform hover:scale-105 transition-transform duration-200"
+                            />
+                        </div>
+
+                        <div className="flex flex-1 flex-col gap-1">
+                            <p className="font-medium text-gray-900 line-clamp-2">{name}</p>
+                            <div className="flex items-baseline gap-2">
+                            <span className="text-base font-semibold text-gray-900">
+                                RM {price.toFixed(2)}
+                            </span>
+                                <span className="text-sm text-gray-500">
+                                {unit}
+                            </span>
+                            </div>
+                            <button
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    removeFromCart(id);
+                                }}
+                                className="mt-1 text-sm font-medium text-green-600 hover:text-green-700 transition-colors w-fit"
+                            >
+                                Undo
+                            </button>
                         </div>
                     </div>
-                    <button
-                        onClick={() => removeFromCart(id)}
-                        className="text-sm text-green-600 hover:text-green-700"
-                    >
-                        Undo
-                    </button>
                 </div>
             ),
             duration: 3000,
